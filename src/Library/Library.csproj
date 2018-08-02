@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Portfolio.hu.API</PackageId>
+    <Authors>Tom PoLáKoSz</Authors>
+    <Version>0.1.0</Version>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageTags>wrapper api net standard 2.0 portfolio.hu</PackageTags>
+    <PackageProjectUrl>https://github.com/PoLaKoSz/Portfolio.hu-API</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/PoLaKoSz/Portfolio.hu-API</RepositoryUrl>
+    <RepositoryType></RepositoryType>
+    <PackageLicenseUrl>https://github.com/PoLaKoSz/Portfolio.hu-API/blob/master/LICENSE</PackageLicenseUrl>
+    <Company>PoLáKoSz's Corp.</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.8.5" />
+  </ItemGroup>
+
+</Project>
