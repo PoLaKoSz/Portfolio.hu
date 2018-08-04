@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Library.Models
+namespace PoLaKoSz.hu.Portfolio_hu_API.Models
 {
     public class PortfolioArticle
     {

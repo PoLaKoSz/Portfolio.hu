@@ -1,9 +1,9 @@
-﻿using Library.Deserializers;
-using Library.Models;
+﻿using PoLaKoSz.hu.Portfolio_hu_API.Deserializers;
+using PoLaKoSz.hu.Portfolio_hu_API.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace Library.UnitTests.Deserializers
+namespace PoLaKoSz.hu.Portfolio_hu_API.UnitTests.Deserializers
 {
     [TestClass]
     public class ArticleDeserializerTests

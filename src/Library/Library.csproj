@@ -12,6 +12,8 @@
     <RepositoryType></RepositoryType>
     <PackageLicenseUrl>https://github.com/PoLaKoSz/Portfolio.hu-API/blob/master/LICENSE</PackageLicenseUrl>
     <Company>PoLáKoSz's Corp.</Company>
+    <RootNamespace>PoLaKoSz.hu.Portfolio_hu_API</RootNamespace>
+    <AssemblyName>Portfolio.hu</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

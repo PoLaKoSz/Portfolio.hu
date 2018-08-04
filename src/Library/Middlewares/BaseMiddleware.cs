@@ -1,6 +1,6 @@
 ﻿using HtmlAgilityPack;
 
-namespace Library.Middlewares
+namespace PoLaKoSz.hu.Portfolio_hu_API.Middlewares
 {
     public abstract class BaseMiddleware
     {

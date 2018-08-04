@@ -1,9 +1,9 @@
-﻿using Library.Deserializers;
-using Library.Middlewares;
-using Library.Models;
+﻿using PoLaKoSz.hu.Portfolio_hu_API.Deserializers;
+using PoLaKoSz.hu.Portfolio_hu_API.Middlewares;
+using PoLaKoSz.hu.Portfolio_hu_API.Models;
 using System;
 
-namespace Library
+namespace PoLaKoSz.hu.Portfolio_hu_API
 {
     public class Article : EndPoint
     {

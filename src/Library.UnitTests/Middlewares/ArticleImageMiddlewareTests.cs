@@ -1,6 +1,6 @@
 ﻿using HtmlAgilityPack;
-using Library;
-using Library.Middlewares;
+using PoLaKoSz.hu.Portfolio_hu_API;
+using PoLaKoSz.hu.Portfolio_hu_API.Middlewares;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Library_UnitTests.Middlewares

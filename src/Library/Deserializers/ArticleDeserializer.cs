@@ -1,8 +1,8 @@
 ﻿using HtmlAgilityPack;
-using Library.Models;
+using PoLaKoSz.hu.Portfolio_hu_API.Models;
 using System;
 
-namespace Library.Deserializers
+namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
 {
     public static class ArticleDeserializer
     {
