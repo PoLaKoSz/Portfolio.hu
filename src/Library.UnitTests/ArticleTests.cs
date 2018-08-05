@@ -63,9 +63,12 @@ namespace UnitTests
         }
 
         [DataTestMethod]
-        [DataRow("http://www.portfolio.hu/vallalatok/743-forintos-celar-erkezett-az-appeninnre-ugrik-az-arfolyam.290884.html?i=290884")]
         [DataRow("http://portfolio.hu/hir.php?i=293194")]
         [DataRow("http://www.portfolio.hu/hir.php?i=293194")]
+        [DataRow("http://www.portfolio.hu/prof/ok-ezert-lattak-elore-a-valasztasi-eredmenyt.287426.html")]
+        [DataRow("https://www.portfolio.hu/impakt/csanyi-a-bankvilag-nem-a-kalandorok-helye.4.267115.html")]
+        [DataRow("https://www.portfolio.hu/short/10-milliard-forintnyi-buntetesre-iteltek-egy-tinit-mert-erdotuzet-okozott.286466.html")]
+        [DataRow("http://www.portfolio.hu/vallalatok/743-forintos-celar-erkezett-az-appeninnre-ugrik-az-arfolyam.290884.html?i=290884")]
         [DataRow("https://www.portfolio.hu/befektetes/befektetesi-alapok/eletbe-lepett-az-uj-eu-s-szabaly-itt-a-kegyelemdofes-a-bankbetetek-nagy-rivalisainak.292842.html")]
         public void IsValidURL__PassValidURL__ShouldReturnTrue(string url)
         {

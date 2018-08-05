@@ -45,14 +45,24 @@ namespace PoLaKoSz.hu.Portfolio_hu_API
                 articleAddress.Host.Equals("www.portfolio.hu")))
                 return false;
 
-            if (!(3 <= articleAddress.Segments.Length ||
-                articleAddress.AbsolutePath.Contains("hir.php")))
-                return false;
+            if (articleAddress.AbsolutePath.Contains("hir.php"))
+                return true;
 
-            if (articleAddress.Segments[1].Equals("arfolyam-panel/"))
+            if (articleAddress.Segments.Length < 3)
                 return false;
+            
 
-            return true;
+            string[] menus = {
+                "befektetes/", "finanszirozas/", "deviza-kotveny/", "ingatlan/",
+                "gazdasag/", "vallalatok/", "unios-forrasok/", "short/", "prof/", "impakt/" };
+
+            foreach (var menuName in menus)
+            {
+                if (articleAddress.Segments[1].Equals(menuName))
+                    return true;
+            }
+
+            return false;
         }
     }
 }
