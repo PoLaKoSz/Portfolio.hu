@@ -2,4 +2,4 @@
 
 A .NET standard 2.0 library to save data from [Portfolio.hu](https://portfolio.hu/).
 
-[![Portfolio.hu API MyGet Build Status](https://www.myget.org/BuildSource/Badge/polakosz?identifier=0859d834-6ce8-4739-b02f-0ca59e507b5e)](https://www.myget.org/feed/polakosz/package/nuget/Portfolio.hu.API)
+[![Portfolio.hu API MyGet Build Status](https://www.myget.org/BuildSource/Badge/polakosz?identifier=853f2014-fff0-48c3-b6c5-8cee92e4b824)](https://www.myget.org/feed/polakosz/package/nuget/Portfolio.hu.API)
