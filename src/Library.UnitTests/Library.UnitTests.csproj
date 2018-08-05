@@ -8,7 +8,7 @@
     <ProjectGuid>{2F5B30D1-3BF0-4CCE-8BB0-6470EF798F5B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Library_UnitTests</RootNamespace>
+    <RootNamespace>UnitTests</RootNamespace>
     <AssemblyName>Library.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

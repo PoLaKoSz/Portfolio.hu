@@ -3,7 +3,7 @@ using PoLaKoSz.hu.Portfolio_hu_API;
 using PoLaKoSz.hu.Portfolio_hu_API.Middlewares;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Library_UnitTests.Middlewares
+namespace UnitTests.Middlewares
 {
     [TestClass]
     public class ArticleImageMiddlewareTests

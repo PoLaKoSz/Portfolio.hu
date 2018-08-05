@@ -1,7 +1,7 @@
 ﻿using System;
 using PoLaKoSz.hu.Portfolio_hu_API.DataAccessLayer;
 
-namespace Library_UnitTests.DataAccessLayer
+namespace UnitTests.DataAccessLayer
 {
     internal class FakeWebClient : IWebClient
     {

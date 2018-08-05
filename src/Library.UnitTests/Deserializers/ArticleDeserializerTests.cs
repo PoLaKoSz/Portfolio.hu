@@ -3,7 +3,7 @@ using PoLaKoSz.hu.Portfolio_hu_API.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API.UnitTests.Deserializers
+namespace UnitTests.Deserializers
 {
     [TestClass]
     public class ArticleDeserializerTests
