@@ -7,7 +7,7 @@ namespace PoLaKoSz.hu.Portfolio_hu_API.Middlewares
     /// </summary>
     public class ArticleImageMiddleware : BaseMiddleware
     {
-        /// <inheritdoc/>
+        /// <inheritdoc />
         public override HtmlNode PostEvent(HtmlNode rootNode)
         {
             HtmlNode articleNode = rootNode.SelectSingleNode("//*[@id=\"cikk\"]");

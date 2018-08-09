@@ -8,8 +8,19 @@ namespace PoLaKoSz.hu.Portfolio_hu_API
 {
     public abstract class EndPoint
     {
+        /// <summary>
+        /// This URL will be called in the web request
+        /// </summary>
         public Uri EndpointAddress { get; set; }
+
+        /// <summary>
+        /// Call the endpoint throw this class
+        /// </summary>
         public IWebClient WebClient { get; set; }
+
+        /// <summary>
+        /// These classes will be executed before and after the web request
+        /// </summary>
         public List<BaseMiddleware> Middlewares { get; set; }
 
 

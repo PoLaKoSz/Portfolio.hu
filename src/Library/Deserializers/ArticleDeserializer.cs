@@ -11,14 +11,14 @@ namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
         /// </summary>
         /// <param name="sourceCode">Webpage source code</param>
         /// <returns></returns>
-        public static PortfolioArticle Deserialize(string sourceCode)
+        public static Article Deserialize(string sourceCode)
         {
             HtmlDocument document = new HtmlDocument();
             document.LoadHtml(sourceCode);
 
             HtmlNode articleNode = ValidateArticle(document);
 
-            return new PortfolioArticle(GetTitle(articleNode), GetBody(articleNode));
+            return new Article(GetTitle(articleNode), GetBody(articleNode));
         }
 
         private static HtmlNode ValidateArticle(HtmlDocument htmlDocument)

@@ -25,7 +25,7 @@ namespace UnitTests.Deserializers
         [TestMethod]
         public void ValidArticle__ShouldFindArticleTitle()
         {
-            var expectedArticle = new PortfolioArticle("This library works! :)", "");
+            var expectedArticle = new Article("This library works! :)", "");
 
             var actualArticle = ArticleDeserializer.Deserialize(
 "<div id=\"cikk\">"+

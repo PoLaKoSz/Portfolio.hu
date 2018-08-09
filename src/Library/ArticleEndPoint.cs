@@ -5,14 +5,14 @@ using System;
 
 namespace PoLaKoSz.hu.Portfolio_hu_API
 {
-    public class Article : EndPoint
+    public class ArticleEndPoint : EndPoint
     {
         /// <summary>
         /// Initialize a new Article endpoint
         /// </summary>
         /// <param name="articleAddress"></param>
         /// <exception cref="ArgumentException">Occurs when the passed <see cref="Uri"/> is not valid</exception>
-        public Article(Uri articleAddress)
+        public ArticleEndPoint(Uri articleAddress)
             : base(articleAddress)
         {
             if (!IsValidURL(articleAddress))
@@ -27,7 +27,7 @@ namespace PoLaKoSz.hu.Portfolio_hu_API
         /// Return the desired Portfolio article
         /// </summary>
         /// <returns></returns>
-        public PortfolioArticle Load()
+        public Article Load()
         {
             string sourceCode = base.LoadWebpage();
 

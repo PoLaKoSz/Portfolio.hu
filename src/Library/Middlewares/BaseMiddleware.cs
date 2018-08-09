@@ -4,16 +4,20 @@ namespace PoLaKoSz.hu.Portfolio_hu_API.Middlewares
 {
     public abstract class BaseMiddleware
     {
+        /// <summary>
+        /// Modify the <see cref="EndPoint"/> before the web request
+        /// </summary>
+        /// <param name="endPoint"></param>
         public virtual void PreEvent(EndPoint endPoint)
         {
 
         }
 
         /// <summary>
-        /// Gets the root node of the sourceCode
+        /// Modify the response from the previous middleware or the actual web response
         /// </summary>
-        /// <param name="sourceCode">Root HtmlNode of the sourcecode</param>
-        /// <returns></returns>
+        /// <param name="rootNode">Modified rootnode by middlewares from the web response</param>
+        /// <returns>Method parameter without modification</returns>
         public virtual HtmlNode PostEvent(HtmlNode rootNode)
         {
             return rootNode;

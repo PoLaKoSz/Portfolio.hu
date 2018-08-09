@@ -16,7 +16,7 @@ namespace UnitTests
         {
             Uri address = new Uri(url);
 
-            bool actual = Article.IsValidURL(address);
+            bool actual = ArticleEndPoint.IsValidURL(address);
 
             Assert.AreEqual(false, actual);
         }
@@ -32,7 +32,7 @@ namespace UnitTests
         {
             Uri address = new Uri(url);
 
-            bool actual = Article.IsValidURL(address);
+            bool actual = ArticleEndPoint.IsValidURL(address);
 
             Assert.AreEqual(false, actual);
         }
@@ -45,7 +45,7 @@ namespace UnitTests
         {
             Uri address = new Uri(url);
 
-            bool actual = Article.IsValidURL(address);
+            bool actual = ArticleEndPoint.IsValidURL(address);
 
             Assert.AreEqual(false, actual);
         }
@@ -57,7 +57,7 @@ namespace UnitTests
         {
             Uri address = new Uri(url);
 
-            bool actual = Article.IsValidURL(address);
+            bool actual = ArticleEndPoint.IsValidURL(address);
 
             Assert.AreEqual(false, actual);
         }
@@ -74,7 +74,7 @@ namespace UnitTests
         {
             Uri address = new Uri(url);
 
-            bool actual = Article.IsValidURL(address);
+            bool actual = ArticleEndPoint.IsValidURL(address);
 
             Assert.AreEqual(true, actual);
         }
