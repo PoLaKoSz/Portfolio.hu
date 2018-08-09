@@ -27,7 +27,7 @@ namespace UnitTests.Deserializers
         [ExpectedException(typeof(ArchivedArticleException))]
         public void ArchivedArchive__ShouldThrowArchivedArticleException()
         {
-            ArticleDeserializer.Deserialize("<div class=\"greentitle\"><h1>\n Elõfizetõi tartalom\n</h1></div>");
+            ArticleDeserializer.Deserialize("<div class=\"greentitle\"><h1>\n Előfizetői tartalom\n</h1></div>");
         }
 
         [TestMethod]
@@ -37,18 +37,9 @@ namespace UnitTests.Deserializers
 
             var actualArticle = ArticleDeserializer.Deserialize(
 "<div id=\"cikk\">"+
-    "<table>"+
-		"<tbody>"+
-			"<tr>"+
-				"<td></td>"+
-				"<td>"+
-					"<h1>"+
-						"This library works! :)"+
-					"</h1>"+
-				"</td>"+
-			"</tr>"+
-		"</tbody>"+
-	"</table>"+
+    "<h1>"+
+        "This library works! :)"+
+	"</h1>"+
 "</div>");
 
             Assert.AreEqual(expectedArticle.Title, actualArticle.Title);

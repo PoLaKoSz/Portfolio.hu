@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "src\Library\Libr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.UnitTests", "src\Library.UnitTests\Library.UnitTests.csproj", "{2F5B30D1-3BF0-4CCE-8BB0-6470EF798F5B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8E348919-E0F1-415F-9EC5-9029D235A565}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integration", "src\tests\Integration\Integration.csproj", "{A6231AE9-A2BA-406E-AE61-3BAB2166EC64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +25,16 @@ Global
 		{2F5B30D1-3BF0-4CCE-8BB0-6470EF798F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F5B30D1-3BF0-4CCE-8BB0-6470EF798F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F5B30D1-3BF0-4CCE-8BB0-6470EF798F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6231AE9-A2BA-406E-AE61-3BAB2166EC64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6231AE9-A2BA-406E-AE61-3BAB2166EC64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6231AE9-A2BA-406E-AE61-3BAB2166EC64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6231AE9-A2BA-406E-AE61-3BAB2166EC64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A6231AE9-A2BA-406E-AE61-3BAB2166EC64} = {8E348919-E0F1-415F-9EC5-9029D235A565}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {788DCBA2-76A9-4764-9085-620E6B7E969F}

@@ -28,7 +28,7 @@ namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
             var subscriptionTitleNode = htmlDocument.DocumentNode.SelectSingleNode("//div[@class=\"greentitle\"]");
             
             if (subscriptionTitleNode != null &&
-                subscriptionTitleNode.InnerText.Equals("\n Elõfizetõi tartalom\n"))
+                subscriptionTitleNode.InnerText.Equals("\n Előfizetői tartalom\n"))
                 throw new ArchivedArticleException("This article can't be parsed without a subscription!");
             
             var articleNode = htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"cikk\"]");
@@ -41,7 +41,7 @@ namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
 
         private static string GetTitle(HtmlNode articleNode)
         {
-            var titleNode = articleNode.SelectSingleNode("//table[1]/tbody/tr/td[2]/h1");
+            var titleNode = articleNode.SelectSingleNode("./h1");
 
             if (titleNode == null)
                 throw new NodeNotFoundException("Can't find article title. This is not a valid article!");
