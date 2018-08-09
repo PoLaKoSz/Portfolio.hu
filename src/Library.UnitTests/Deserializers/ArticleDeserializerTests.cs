@@ -1,7 +1,7 @@
 ﻿using PoLaKoSz.hu.Portfolio_hu_API.Deserializers;
 using PoLaKoSz.hu.Portfolio_hu_API.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+using HtmlAgilityPack;
 
 namespace UnitTests.Deserializers
 {
@@ -9,14 +9,14 @@ namespace UnitTests.Deserializers
     public class ArticleDeserializerTests
     {
         [TestMethod]
-        [ExpectedException(typeof(Exception))]
+        [ExpectedException(typeof(NodeNotFoundException))]
         public void InvalidArticle__ShouldThrowException()
         {
             ArticleDeserializer.Deserialize("<html></html>");
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Exception))]
+        [ExpectedException(typeof(NodeNotFoundException))]
         public void ArticleWithoutTitle__ShouldThrowException()
         {
             ArticleDeserializer.Deserialize("<div id=\"cikk\"></div>");

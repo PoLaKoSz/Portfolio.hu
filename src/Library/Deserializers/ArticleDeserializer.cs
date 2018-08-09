@@ -11,6 +11,7 @@ namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
         /// </summary>
         /// <param name="sourceCode">Webpage source code</param>
         /// <returns></returns>
+        /// <exception cref="NodeNotFoundException">Occurs when a deserialization failed</exception>
         public static Article Deserialize(string sourceCode)
         {
             HtmlDocument document = new HtmlDocument();
@@ -26,7 +27,7 @@ namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
             var articleNode = htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"cikk\"]");
 
             if (articleNode == null)
-                throw new Exception("This is not a valid article!");
+                throw new NodeNotFoundException("Can't find DIV with ID cikk. This is not a valid article!");
 
             return articleNode;
         }
@@ -36,7 +37,7 @@ namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
             var titleNode = articleNode.SelectSingleNode("//table[1]/tbody/tr/td[2]/h1");
 
             if (titleNode == null)
-                throw new Exception("Article title not found!");
+                throw new NodeNotFoundException("Can't find article title. This is not a valid article!");
 
             return titleNode.InnerText;
         }

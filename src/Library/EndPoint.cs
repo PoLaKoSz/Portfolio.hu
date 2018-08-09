@@ -3,6 +3,7 @@ using PoLaKoSz.hu.Portfolio_hu_API.DataAccessLayer;
 using PoLaKoSz.hu.Portfolio_hu_API.Middlewares;
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 namespace PoLaKoSz.hu.Portfolio_hu_API
 {
@@ -28,7 +29,7 @@ namespace PoLaKoSz.hu.Portfolio_hu_API
         public EndPoint(string relativeAddress)
             : this(new Uri(new Uri(Constans.BaseAddress), relativeAddress)) { }
         public EndPoint(Uri endpointAddress)
-            : this(endpointAddress, new WebClient()) { }
+            : this(endpointAddress, new DataAccessLayer.WebClient()) { }
         public EndPoint(Uri endpointAddress, IWebClient webClient)
         {
             EndpointAddress = endpointAddress;
@@ -42,12 +43,23 @@ namespace PoLaKoSz.hu.Portfolio_hu_API
         /// Run middlewares and download the EndpointAddress's contet
         /// </summary>
         /// <returns>Raw source code modified by middlewares</returns>
+        /// <exception cref="System.Net.WebException"></exception>
         protected string LoadWebpage()
         {
             foreach (var middleware in Middlewares)
                 middleware.PreEvent(this);
 
-            string sourceCode = WebClient.DownloadString(EndpointAddress);
+            string sourceCode = "";
+
+            try
+            {
+                sourceCode = WebClient.DownloadString(EndpointAddress);
+            }
+            catch (WebException ex)
+            {
+                string message = $"HTTP status: {ex.Status}. Can not load URL: {EndpointAddress.ToString()}";
+                throw new WebException(message, ex);
+            }
 
             var rootNode = GetRootNode(sourceCode);
 

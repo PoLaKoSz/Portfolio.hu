@@ -27,11 +27,23 @@ namespace PoLaKoSz.hu.Portfolio_hu_API
         /// Return the desired Portfolio article
         /// </summary>
         /// <returns></returns>
+        /// <exception cref="Exception">Occurs when the web response can't be parsed to a <see cref="Article"/></exception>
         public Article Load()
         {
             string sourceCode = base.LoadWebpage();
 
-            return ArticleDeserializer.Deserialize(sourceCode);
+            Article article;
+
+            try
+            {
+                article = ArticleDeserializer.Deserialize(sourceCode);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Can't parse article with URL {EndpointAddress.ToString()}", ex);
+            }
+
+            return article;
         }
 
         /// <summary>
