@@ -4,6 +4,7 @@ using PoLaKoSz.hu.Portfolio_hu_API.Middlewares;
 using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Text;
 
 namespace PoLaKoSz.hu.Portfolio_hu_API
 {
@@ -33,7 +34,10 @@ namespace PoLaKoSz.hu.Portfolio_hu_API
         public EndPoint(Uri endpointAddress, IWebClient webClient)
         {
             EndpointAddress = endpointAddress;
+
             WebClient = webClient;
+            WebClient.Encoding = Encoding.GetEncoding("ISO-8859-2");
+
             Middlewares = new List<BaseMiddleware>();
         }
 
