@@ -7,7 +7,6 @@ namespace UnitTests
     [TestClass]
     public class ArticleTests
     {
-
         [DataTestMethod]
         [DataRow("https://www.google.com")]
         [DataRow("https://www.facebook.com")]

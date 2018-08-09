@@ -2,6 +2,7 @@
 using PoLaKoSz.hu.Portfolio_hu_API.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HtmlAgilityPack;
+using PoLaKoSz.hu.Portfolio_hu_API.Exceptions;
 
 namespace UnitTests.Deserializers
 {
@@ -20,6 +21,13 @@ namespace UnitTests.Deserializers
         public void ArticleWithoutTitle__ShouldThrowException()
         {
             ArticleDeserializer.Deserialize("<div id=\"cikk\"></div>");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArchivedArticleException))]
+        public void ArchivedArchive__ShouldThrowArchivedArticleException()
+        {
+            ArticleDeserializer.Deserialize("<div class=\"greentitle\"><h1>\n Elõfizetõi tartalom\n</h1></div>");
         }
 
         [TestMethod]

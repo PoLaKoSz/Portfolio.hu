@@ -1,6 +1,6 @@
 ﻿using HtmlAgilityPack;
+using PoLaKoSz.hu.Portfolio_hu_API.Exceptions;
 using PoLaKoSz.hu.Portfolio_hu_API.Models;
-using System;
 
 namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
 {
@@ -12,6 +12,7 @@ namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
         /// <param name="sourceCode">Webpage source code</param>
         /// <returns></returns>
         /// <exception cref="NodeNotFoundException">Occurs when a deserialization failed</exception>
+        /// <exception cref="ArchivedArticleException">Occurs when the article is not available for visitors</exception>
         public static Article Deserialize(string sourceCode)
         {
             HtmlDocument document = new HtmlDocument();
@@ -24,6 +25,12 @@ namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
 
         private static HtmlNode ValidateArticle(HtmlDocument htmlDocument)
         {
+            var subscriptionTitleNode = htmlDocument.DocumentNode.SelectSingleNode("//div[@class=\"greentitle\"]");
+            
+            if (subscriptionTitleNode != null &&
+                subscriptionTitleNode.InnerText.Equals("\n Elõfizetõi tartalom\n"))
+                throw new ArchivedArticleException("This article can't be parsed without a subscription!");
+            
             var articleNode = htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"cikk\"]");
 
             if (articleNode == null)
