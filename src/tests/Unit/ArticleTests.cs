@@ -17,7 +17,7 @@ namespace UnitTests
 
             bool actual = ArticleEndPoint.IsValidURL(address);
 
-            Assert.AreEqual(false, actual);
+            Assert.IsFalse(actual);
         }
         
         [DataTestMethod]
@@ -33,7 +33,7 @@ namespace UnitTests
 
             bool actual = ArticleEndPoint.IsValidURL(address);
 
-            Assert.AreEqual(false, actual);
+            Assert.IsFalse(actual);
         }
 
         [DataTestMethod]
@@ -46,7 +46,7 @@ namespace UnitTests
 
             bool actual = ArticleEndPoint.IsValidURL(address);
 
-            Assert.AreEqual(false, actual);
+            Assert.IsFalse(actual);
         }
 
         [DataTestMethod]
@@ -58,10 +58,11 @@ namespace UnitTests
 
             bool actual = ArticleEndPoint.IsValidURL(address);
 
-            Assert.AreEqual(false, actual);
+            Assert.IsFalse(actual);
         }
 
         [DataTestMethod]
+        [DataRow("www.portfolio.hu/hir.php?i=294260")]
         [DataRow("http://portfolio.hu/hir.php?i=293194")]
         [DataRow("http://www.portfolio.hu/hir.php?i=293194")]
         [DataRow("http://www.portfolio.hu/prof/ok-ezert-lattak-elore-a-valasztasi-eredmenyt.287426.html")]
@@ -71,11 +72,11 @@ namespace UnitTests
         [DataRow("https://www.portfolio.hu/befektetes/befektetesi-alapok/eletbe-lepett-az-uj-eu-s-szabaly-itt-a-kegyelemdofes-a-bankbetetek-nagy-rivalisainak.292842.html")]
         public void IsValidURL__PassValidURL__ShouldReturnTrue(string url)
         {
-            Uri address = new Uri(url);
+            Uri address = new UriBuilder(url).Uri;
 
             bool actual = ArticleEndPoint.IsValidURL(address);
 
-            Assert.AreEqual(true, actual);
+            Assert.IsTrue(actual);
         }
     }
 }
