@@ -27,7 +27,7 @@ namespace UnitTests.Deserializers
         [ExpectedException(typeof(ArchivedArticleException))]
         public void ArchivedArchive__ShouldThrowArchivedArticleException()
         {
-            ArticleDeserializer.Deserialize("<div class=\"greentitle\"><h1>\n Előfizetői tartalom\n</h1></div>");
+            ArticleDeserializer.Deserialize("<div class=\"greentitle\"><h1>\r\n Előfizetői tartalom\r\n</h1></div>");
         }
 
         [TestMethod]

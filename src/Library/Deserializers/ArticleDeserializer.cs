@@ -26,11 +26,11 @@ namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
         private static HtmlNode ValidateArticle(HtmlDocument htmlDocument)
         {
             var subscriptionTitleNode = htmlDocument.DocumentNode.SelectSingleNode("//div[@class=\"greentitle\"]");
-            
+
             if (subscriptionTitleNode != null &&
-                subscriptionTitleNode.InnerText.Equals("\n Előfizetői tartalom\n"))
+                subscriptionTitleNode.InnerText.Contains("Előfizetői tartalom"))
                 throw new ArchivedArticleException("This article can't be parsed without a subscription!");
-            
+
             var articleNode = htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"cikk\"]");
 
             if (articleNode == null)
