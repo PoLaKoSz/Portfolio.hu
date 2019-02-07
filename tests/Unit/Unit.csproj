@@ -13,16 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Library\Library.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="StaticResources\article_archived.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="StaticResources\article_valid.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="..\..\src\Library\Library.csproj" />
   </ItemGroup>
 
 </Project>
