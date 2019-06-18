@@ -11,7 +11,7 @@ namespace Library.Tests.Integration.Deserializers
         [Test]
         public void ArchivedArchive__ShouldThrowArchivedArticleException()
         {
-            string sourceCode = File.ReadAllText("StaticResources\\article_archived.html");
+            string sourceCode = File.ReadAllText("StaticResources/article_archived.html");
 
             Assert.Throws<ArchivedArticleException>(() => ArticleDeserializer.Deserialize(sourceCode));
         }
