@@ -36,7 +36,7 @@ namespace PoLaKoSz.hu.Portfolio_hu_API
             EndpointAddress = endpointAddress;
 
             WebClient = webClient;
-            WebClient.Encoding = Encoding.GetEncoding("ISO-8859-2");
+            WebClient.Encoding = Encoding.GetEncoding("ISO-8859-1");
 
             Middlewares = new List<BaseMiddleware>();
         }
