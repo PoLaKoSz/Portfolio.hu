@@ -2,16 +2,18 @@
 using PoLaKoSz.hu.Portfolio_hu_API.Deserializers;
 using PoLaKoSz.hu.Portfolio_hu_API.Exceptions;
 using PoLaKoSz.hu.Portfolio_hu_API.Models;
-using System.IO;
 
 namespace Library.Tests.Integration.Deserializers
 {
-    public class ArticleDeserializerTests
+    class ArticleDeserializerTests : TestClassBase
     {
+        public ArticleDeserializerTests()
+            : base("articles") { }
+
         [Test]
         public void ArchivedArchive__ShouldThrowArchivedArticleException()
         {
-            string sourceCode = File.ReadAllText("StaticResources/article_archived.html");
+            string sourceCode = base.GetTestData("archived");
 
             Assert.Throws<ArchivedArticleException>(() => ArticleDeserializer.Deserialize(sourceCode));
         }
@@ -21,7 +23,7 @@ namespace Library.Tests.Integration.Deserializers
         {
             var expectedArticle = new Article("Gigantikusra nőtt a magyar állam - Most kell tízezreket utcára tenni?", "");
 
-            string sourceCode = File.ReadAllText("StaticResources\\article_valid.html");
+            string sourceCode = base.GetTestData("valid");
 
             var actual = ArticleDeserializer.Deserialize( sourceCode );
 
