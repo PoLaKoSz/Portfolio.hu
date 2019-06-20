@@ -1,0 +1,14 @@
+language: csharp
+solution: Portfolio.hu API.sln
+mono: none
+dotnet: 2.0.0
+dist: trusty
+
+install:
+  - dotnet restore
+  - sudo apt-get install nunit-console
+
+script:
+  - dotnet test tests/Integration/Integration.csproj
+  - dotnet test tests/Regression/Regression.csproj
+  - dotnet test tests/Unit/Unit.csproj

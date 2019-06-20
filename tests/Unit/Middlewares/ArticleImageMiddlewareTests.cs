@@ -1,26 +1,21 @@
 ﻿using HtmlAgilityPack;
 using PoLaKoSz.hu.Portfolio_hu_API;
 using PoLaKoSz.hu.Portfolio_hu_API.Middlewares;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace UnitTests.Middlewares
 {
-    [TestClass]
     public class ArticleImageMiddlewareTests
     {
-        private static ArticleImageMiddleware _middleware { get; set; }
+        private static ArticleImageMiddleware _middleware;
 
-
-
-        [ClassInitialize]
-        public static void ClassInit(TestContext context)
+        [OneTimeSetUp]
+        public static void OneTimeSetUp()
         {
             _middleware = new ArticleImageMiddleware();
         }
 
-
-
-        [TestMethod]
+        [Test]
         public void NoImageFound__NoChangesIntroduced()
         {
             var expected = HtmlNode.CreateNode("<div>Hello</div>");
@@ -30,7 +25,7 @@ namespace UnitTests.Middlewares
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
+        [Test]
         public void OneImage__ShouldChangeLocalPath()
         {
             var testNode = HtmlNode.CreateNode("<div id=\"cikk\"><img src=\"/img/upload/2018/07/6-20180726.png\"></div>");
