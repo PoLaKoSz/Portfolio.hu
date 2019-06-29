@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using PoLaKoSz.hu.Portfolio_hu_API.DataAccessLayer;
 using PoLaKoSz.hu.Portfolio_hu_API.Deserializers;
+using PoLaKoSz.hu.Portfolio_hu_API.Exceptions;
 using PoLaKoSz.hu.Portfolio_hu_API.Models;
 
 namespace PoLaKoSz.hu.Portfolio_hu_API.EndPoints
@@ -29,6 +31,20 @@ namespace PoLaKoSz.hu.Portfolio_hu_API.EndPoints
             string json = base.GetAsync($"{stock.Name}:interval=1D&resolution=600");
 
             return _parser.AsForex(json);
+        }
+
+        public List<StockBinding> StockBinding(ShareType type, DateTime at)
+        {
+            try
+            {
+                string sourceCode = base.GetAsync($"{type.Name}:interval=1D&resolution=600");
+
+                return _parser.AsBinding(sourceCode);
+            }
+            catch (Exception ex)
+            {
+                throw new DeprecatedLibraryException($"Error with {type.Name} at {((DateTimeOffset)at).ToUnixTimeSeconds()}", ex);
+            }
         }
     }
 }

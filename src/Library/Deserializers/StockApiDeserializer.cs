@@ -114,6 +114,11 @@ namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
             }
         }
 
+        public List<StockBinding> AsBinding(string sourceCode)
+        {
+
+        }
+
         private Stock ParseCommonProperties(JObject jObject)
         {
             bool isStarted = ToBool("started", jObject);
