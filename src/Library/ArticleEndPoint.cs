@@ -1,5 +1,4 @@
 ﻿using PoLaKoSz.hu.Portfolio_hu_API.Deserializers;
-using PoLaKoSz.hu.Portfolio_hu_API.Middlewares;
 using PoLaKoSz.hu.Portfolio_hu_API.Models;
 using System;
 
@@ -8,26 +7,22 @@ namespace PoLaKoSz.hu.Portfolio_hu_API
     public class ArticleEndPoint : EndPoint
     {
         /// <summary>
-        /// Initialize a new Article endpoint
+        /// Initialize a new Article endpoint.
         /// </summary>
-        /// <param name="articleAddress"></param>
-        /// <exception cref="ArgumentException">Occurs when the passed <see cref="Uri"/> is not valid</exception>
+        /// <exception cref="ArgumentException">Occurs when the passed <see cref="Uri"/> is not valid.</exception>
         public ArticleEndPoint(Uri articleAddress)
             : base(articleAddress)
         {
             if (!IsValidURL(articleAddress))
                 throw new ArgumentException("URL " + articleAddress.ToString() + " is not a valid article!");
-
-            Middlewares.Add(new ArticleImageMiddleware());
         }
 
 
 
         /// <summary>
-        /// Return the desired Portfolio article
+        /// Return the desired Portfolio article.
         /// </summary>
-        /// <returns></returns>
-        /// <exception cref="Exception">Occurs when the web response can't be parsed to a <see cref="Article"/></exception>
+        /// <exception cref="Exception">Occurs when the web response can't be parsed to a <see cref="Article"/>.</exception>
         public Article Load()
         {
             string sourceCode = base.LoadWebpage();
@@ -47,10 +42,9 @@ namespace PoLaKoSz.hu.Portfolio_hu_API
         }
 
         /// <summary>
-        /// Determinate that the given <see cref="Uri"/> is a valid article URL
+        /// Determinate that the given <see cref="Uri"/> is a valid article URL.
         /// </summary>
-        /// <param name="articleAddress">Questionable URL</param>
-        /// <returns></returns>
+        /// <param name="articleAddress">Questionable URL.</param>
         public static bool IsValidURL(Uri articleAddress)
         {
             if (!(articleAddress.Host.Equals("portfolio.hu") ||

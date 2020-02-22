@@ -1,11 +1,14 @@
 ﻿using HtmlAgilityPack;
 using PoLaKoSz.hu.Portfolio_hu_API.Exceptions;
+using PoLaKoSz.hu.Portfolio_hu_API.Middlewares;
 using PoLaKoSz.hu.Portfolio_hu_API.Models;
 
 namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
 {
     public static class ArticleDeserializer
     {
+        private static readonly ArticleImageMiddleware _imageMiddleware = new ArticleImageMiddleware();
+
         /// <summary>
         /// Extract the article from the raw source code
         /// </summary>
@@ -19,6 +22,8 @@ namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
             document.LoadHtml(sourceCode);
 
             HtmlNode articleNode = ValidateArticle(document);
+
+            _imageMiddleware.PostEvent(articleNode);
 
             return new Article(GetTitle(articleNode), GetBody(articleNode));
         }
