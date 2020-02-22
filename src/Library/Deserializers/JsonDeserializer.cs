@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
+namespace PoLaKoSz.Portfolio.Deserializers
 {
     /// <summary>
     /// Wrapper around Newtonsoft.Json to deserialize objects more quickly.

@@ -1,9 +1,8 @@
 ﻿using HtmlAgilityPack;
-using PoLaKoSz.hu.Portfolio_hu_API;
-using PoLaKoSz.hu.Portfolio_hu_API.Middlewares;
+using PoLaKoSz.Portfolio.Middlewares;
 using NUnit.Framework;
 
-namespace UnitTests.Middlewares
+namespace PoLaKoSz.Portfolio.Tests.Unit.Middlewares
 {
     public class ArticleImageMiddlewareTests
     {

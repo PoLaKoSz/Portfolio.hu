@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json.Linq;
-using PoLaKoSz.hu.Portfolio_hu_API.Exceptions;
-using PoLaKoSz.hu.Portfolio_hu_API.Models;
+using PoLaKoSz.Portfolio.Exceptions;
+using PoLaKoSz.Portfolio.Models;
 using System;
 using System.Collections.Generic;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
+namespace PoLaKoSz.Portfolio.Deserializers
 {
     /// <summary>
     /// Fastest deserialization method which checks if

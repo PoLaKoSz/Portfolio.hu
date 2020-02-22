@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API.Models
+namespace PoLaKoSz.Portfolio.Models
 {
     public class Stock : IEquatable<Stock>
     {

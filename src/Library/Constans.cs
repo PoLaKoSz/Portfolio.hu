@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API
+namespace PoLaKoSz.Portfolio
 {
     public static class Constans
     {

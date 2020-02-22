@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
-using PoLaKoSz.hu.Portfolio_hu_API.Exceptions;
+using PoLaKoSz.Portfolio.Exceptions;
 using System;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API.Tests.Regression
+namespace PoLaKoSz.Portfolio.Tests.Regression
 {
     class ArticleEndPointTests
     {

@@ -1,8 +1,7 @@
 ﻿using NUnit.Framework;
-using PoLaKoSz.hu.Portfolio_hu_API;
 using System;
 
-namespace UnitTests
+namespace PoLaKoSz.Portfolio.Tests.Unit
 {
     public class ArticleTests
     {

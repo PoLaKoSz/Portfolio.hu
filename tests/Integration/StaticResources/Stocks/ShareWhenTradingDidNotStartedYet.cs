@@ -1,8 +1,8 @@
-﻿using PoLaKoSz.hu.Portfolio_hu_API.Models;
+﻿using PoLaKoSz.Portfolio.Models;
 using System;
 using System.Collections.Generic;
 
-namespace Library.Tests.Integration.StaticResources.Stocks
+namespace PoLaKoSz.Portfolio.Tests.Integration.StaticResources.Stocks
 {
     class ShareWhenTradingDidNotStartedYet
     {

@@ -1,8 +1,8 @@
-﻿using PoLaKoSz.hu.Portfolio_hu_API.Deserializers;
-using PoLaKoSz.hu.Portfolio_hu_API.Models;
+﻿using PoLaKoSz.Portfolio.Deserializers;
+using PoLaKoSz.Portfolio.Models;
 using System;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API
+namespace PoLaKoSz.Portfolio
 {
     public class ArticleEndPoint : EndPoint
     {

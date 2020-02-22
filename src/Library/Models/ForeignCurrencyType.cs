@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API.Models
+namespace PoLaKoSz.Portfolio.Models
 {
     public class ForeignCurrencyType : StockType
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API.DataAccessLayer
+namespace PoLaKoSz.Portfolio.DataAccessLayer
 {
     public class WebClient : System.Net.WebClient, IWebClient
     {

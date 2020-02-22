@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API.Exceptions
+namespace PoLaKoSz.Portfolio.Exceptions
 {
     public class ArchivedArticleException : Exception
     {

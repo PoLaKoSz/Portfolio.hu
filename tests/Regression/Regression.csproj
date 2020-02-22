@@ -7,7 +7,7 @@
 
     <AssemblyName>RegressionTests</AssemblyName>
 
-    <RootNamespace>PoLaKoSz.hu.Portfolio_hu_API.Tests.Regression</RootNamespace>
+    <RootNamespace>PoLaKoSz.Portfolio.Tests.Regression</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

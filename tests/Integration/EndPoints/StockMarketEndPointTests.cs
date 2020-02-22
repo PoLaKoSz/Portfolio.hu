@@ -1,9 +1,9 @@
-﻿using Integration.DataAccessLayer;
+﻿using PoLaKoSz.Portfolio.Tests.Integration.DataAccessLayer;
 using NUnit.Framework;
-using PoLaKoSz.hu.Portfolio_hu_API.EndPoints;
-using PoLaKoSz.hu.Portfolio_hu_API.Models;
+using PoLaKoSz.Portfolio.EndPoints;
+using PoLaKoSz.Portfolio.Models;
 
-namespace Library.Tests.Integration.EndPoints
+namespace PoLaKoSz.Portfolio.Tests.Integration.EndPoints
 {
     class StockMarketEndPointTests
     {

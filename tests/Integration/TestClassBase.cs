@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Library.Tests.Integration
+namespace PoLaKoSz.Portfolio.Tests.Integration
 {
     internal abstract class TestClassBase
     {

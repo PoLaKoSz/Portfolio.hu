@@ -1,6 +1,6 @@
 ﻿using HtmlAgilityPack;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API.Middlewares
+namespace PoLaKoSz.Portfolio.Middlewares
 {
     /// <summary>
     /// Change every image's relative path to absolute path inside the article

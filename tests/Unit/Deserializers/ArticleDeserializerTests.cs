@@ -1,9 +1,9 @@
-﻿using PoLaKoSz.hu.Portfolio_hu_API.Deserializers;
-using PoLaKoSz.hu.Portfolio_hu_API.Models;
+﻿using PoLaKoSz.Portfolio.Deserializers;
+using PoLaKoSz.Portfolio.Models;
 using HtmlAgilityPack;
 using NUnit.Framework;
 
-namespace UnitTests.Deserializers
+namespace PoLaKoSz.Portfolio.Tests.Unit.Deserializers
 {
     public class ArticleDeserializerTests
     {

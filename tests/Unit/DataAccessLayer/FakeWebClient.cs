@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
-using PoLaKoSz.hu.Portfolio_hu_API.DataAccessLayer;
+using PoLaKoSz.Portfolio.DataAccessLayer;
 
-namespace UnitTests.DataAccessLayer
+namespace PoLaKoSz.Portfolio.Tests.Unit.DataAccessLayer
 {
     internal class FakeWebClient : IWebClient
     {

@@ -1,9 +1,9 @@
 ﻿using System;
-using PoLaKoSz.hu.Portfolio_hu_API.DataAccessLayer;
-using PoLaKoSz.hu.Portfolio_hu_API.Deserializers;
-using PoLaKoSz.hu.Portfolio_hu_API.Models;
+using PoLaKoSz.Portfolio.DataAccessLayer;
+using PoLaKoSz.Portfolio.Deserializers;
+using PoLaKoSz.Portfolio.Models;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API.EndPoints
+namespace PoLaKoSz.Portfolio.EndPoints
 {
     public class StockMarketEndPoint : EndPoint
     {

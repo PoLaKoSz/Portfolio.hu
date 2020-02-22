@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using NUnit.Framework;
-using PoLaKoSz.hu.Portfolio_hu_API.Deserializers;
+using PoLaKoSz.Portfolio.Deserializers;
 using System;
 
 namespace Unit.Deserializers

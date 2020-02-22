@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
-using PoLaKoSz.hu.Portfolio_hu_API.Deserializers;
-using PoLaKoSz.hu.Portfolio_hu_API.Exceptions;
-using PoLaKoSz.hu.Portfolio_hu_API.Models;
+using PoLaKoSz.Portfolio.Deserializers;
+using PoLaKoSz.Portfolio.Exceptions;
+using PoLaKoSz.Portfolio.Models;
 
-namespace Library.Tests.Integration.Deserializers
+namespace PoLaKoSz.Portfolio.Tests.Integration.Deserializers
 {
     class ArticleDeserializerTests : TestClassBase
     {

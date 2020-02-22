@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <RootNamespace>PoLaKoSz.Portfolio.Tests.Integration</RootNamespace>
+
+    <AssemblyName>IntegrationTests</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

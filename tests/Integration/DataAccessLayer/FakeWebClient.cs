@@ -1,8 +1,8 @@
-﻿using PoLaKoSz.hu.Portfolio_hu_API.DataAccessLayer;
+﻿using PoLaKoSz.Portfolio.DataAccessLayer;
 using System;
 using System.Text;
 
-namespace Integration.DataAccessLayer
+namespace PoLaKoSz.Portfolio.Tests.Integration.DataAccessLayer
 {
     class FakeWebClient : IWebClient
     {

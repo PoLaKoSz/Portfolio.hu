@@ -1,10 +1,10 @@
 ﻿using HtmlAgilityPack;
-using PoLaKoSz.hu.Portfolio_hu_API.DataAccessLayer;
+using PoLaKoSz.Portfolio.DataAccessLayer;
 using System;
 using System.Net;
 using System.Text;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API
+namespace PoLaKoSz.Portfolio
 {
     public abstract class EndPoint
     {

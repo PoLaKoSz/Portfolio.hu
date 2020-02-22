@@ -1,9 +1,9 @@
 ﻿using HtmlAgilityPack;
-using PoLaKoSz.hu.Portfolio_hu_API.Exceptions;
-using PoLaKoSz.hu.Portfolio_hu_API.Middlewares;
-using PoLaKoSz.hu.Portfolio_hu_API.Models;
+using PoLaKoSz.Portfolio.Exceptions;
+using PoLaKoSz.Portfolio.Middlewares;
+using PoLaKoSz.Portfolio.Models;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
+namespace PoLaKoSz.Portfolio.Deserializers
 {
     public static class ArticleDeserializer
     {

@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
-using PoLaKoSz.hu.Portfolio_hu_API.DataAccessLayer;
-using PoLaKoSz.hu.Portfolio_hu_API.EndPoints;
-using PoLaKoSz.hu.Portfolio_hu_API.Models;
+using PoLaKoSz.Portfolio.DataAccessLayer;
+using PoLaKoSz.Portfolio.EndPoints;
+using PoLaKoSz.Portfolio.Models;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API.Tests.Regression.EndPoints
+namespace PoLaKoSz.Portfolio.Tests.Regression.EndPoints
 {
     class StockMarketEndPointTests
     {

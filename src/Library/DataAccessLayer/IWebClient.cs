@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace PoLaKoSz.hu.Portfolio_hu_API.DataAccessLayer
+namespace PoLaKoSz.Portfolio.DataAccessLayer
 {
     public interface IWebClient
     {
