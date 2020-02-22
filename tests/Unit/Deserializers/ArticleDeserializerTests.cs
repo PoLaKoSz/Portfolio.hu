@@ -1,36 +1,25 @@
 ﻿using PoLaKoSz.hu.Portfolio_hu_API.Deserializers;
 using PoLaKoSz.hu.Portfolio_hu_API.Models;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HtmlAgilityPack;
-using PoLaKoSz.hu.Portfolio_hu_API.Exceptions;
+using NUnit.Framework;
 
 namespace UnitTests.Deserializers
 {
-    [TestClass]
     public class ArticleDeserializerTests
     {
-        [TestMethod]
-        [ExpectedException(typeof(NodeNotFoundException))]
+        [Test]
         public void InvalidArticle__ShouldThrowException()
         {
-            ArticleDeserializer.Deserialize("<html></html>");
+            Assert.Throws<NodeNotFoundException>(() => ArticleDeserializer.Deserialize("<html></html>"));
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(NodeNotFoundException))]
+        [Test]
         public void ArticleWithoutTitle__ShouldThrowException()
         {
-            ArticleDeserializer.Deserialize("<div id=\"cikk\"></div>");
+            Assert.Throws<NodeNotFoundException>(() => ArticleDeserializer.Deserialize("<div id=\"cikk\"></div>"));
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArchivedArticleException))]
-        public void ArchivedArchive__ShouldThrowArchivedArticleException()
-        {
-            ArticleDeserializer.Deserialize("<div class=\"greentitle\"><h1>\r\n Előfizetői tartalom\r\n</h1></div>");
-        }
-
-        [TestMethod]
+        [Test]
         public void ValidArticle__ShouldFindArticleTitle()
         {
             var expectedArticle = new Article("This library works! :)", "");

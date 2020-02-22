@@ -25,8 +25,6 @@ namespace PoLaKoSz.hu.Portfolio_hu_API
         /// </summary>
         public List<BaseMiddleware> Middlewares { get; set; }
 
-
-        
         public EndPoint(string relativeAddress)
             : this(new Uri(new Uri(Constans.BaseAddress), relativeAddress)) { }
         public EndPoint(Uri endpointAddress)
@@ -36,12 +34,22 @@ namespace PoLaKoSz.hu.Portfolio_hu_API
             EndpointAddress = endpointAddress;
 
             WebClient = webClient;
-            WebClient.Encoding = Encoding.GetEncoding("ISO-8859-2");
+            WebClient.Encoding = Encoding.GetEncoding("ISO-8859-1");
 
             Middlewares = new List<BaseMiddleware>();
         }
 
+        protected string GetAsync(string additionalPath)
+        {
+            var uriBuilder = new UriBuilder(EndpointAddress);
+            uriBuilder.Path += additionalPath;
 
+            string response = WebClient.DownloadString(uriBuilder.Uri);
+
+            System.IO.File.WriteAllText($"{DateTime.Now.ToString("HH_mm_ss")}.html", response);
+
+            return response;
+        }
 
         /// <summary>
         /// Run middlewares and download the EndpointAddress's contet
