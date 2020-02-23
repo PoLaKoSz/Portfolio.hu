@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using PoLaKoSz.Portfolio.DataAccessLayer;
 using PoLaKoSz.Portfolio.EndPoints;
 using PoLaKoSz.Portfolio.Models;
 
@@ -12,7 +11,7 @@ namespace PoLaKoSz.Portfolio.Tests.Regression.EndPoints
         [OneTimeSetUp]
         public static void OneTimeSetUp()
         {
-            _endPoint = new StockMarketEndPoint(new WebClient());
+            _endPoint = new StockMarketEndPoint();
         }
 
         [Test]

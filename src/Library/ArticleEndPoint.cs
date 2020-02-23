@@ -25,7 +25,7 @@ namespace PoLaKoSz.Portfolio
         /// <exception cref="Exception">Occurs when the web response can't be parsed to a <see cref="Article"/>.</exception>
         public Article Load()
         {
-            string sourceCode = base.LoadWebpage();
+            string sourceCode = base.GetAsync("");
 
             Article article;
 

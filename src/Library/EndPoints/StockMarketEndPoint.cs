@@ -1,5 +1,5 @@
 ﻿using System;
-using PoLaKoSz.Portfolio.DataAccessLayer;
+using System.Net.Http;
 using PoLaKoSz.Portfolio.Deserializers;
 using PoLaKoSz.Portfolio.Models;
 
@@ -14,8 +14,11 @@ namespace PoLaKoSz.Portfolio.EndPoints
             _parser = new StockApiDeserializer();
         }
 
-        public StockMarketEndPoint(IWebClient webClient)
-            : base(new Uri("https://data.portfolio.hu/all/json/"), webClient) { }
+        public StockMarketEndPoint()
+            : this(new HttpClient()) { }
+
+        public StockMarketEndPoint(HttpClient httpClient)
+            : base(new Uri("https://data.portfolio.hu/all/json/"), httpClient) { }
 
         public Share Get(ShareType stock)
         {

@@ -1,28 +1,42 @@
-﻿using PoLaKoSz.Portfolio.DataAccessLayer;
-using System;
-using System.Text;
+﻿using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace PoLaKoSz.Portfolio.Tests.Integration.DataAccessLayer
 {
-    class FakeWebClient : IWebClient
+    internal class FakeWebClient : HttpClient
     {
-        private string _serverResponse;
+        private readonly OfflineMessageHandler _messageHandler;
 
         public FakeWebClient()
+            : this(new OfflineMessageHandler())
         {
-            _serverResponse = "";
         }
 
-        public Encoding Encoding { get; set; }
-
-        public void SetServerResponse(string response)
+        public FakeWebClient(OfflineMessageHandler messageHandler)
+            : base(messageHandler)
         {
-            _serverResponse = response;
+            _messageHandler = messageHandler;
         }
 
-        public string DownloadString(Uri address)
+        internal void SetServerResponse(string sourceCode)
         {
-            return _serverResponse;
+            _messageHandler.SetStringContentTo(sourceCode);
+        }
+
+        internal class OfflineMessageHandler : HttpMessageHandler
+        {
+            private string _content;
+
+            internal void SetStringContentTo(string content)
+            {
+                _content = content;
+            }
+
+            protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+            {
+                return Task.FromResult(new HttpResponseMessage() { Content = new StringContent(_content) });
+            }
         }
     }
 }

@@ -1,8 +1,5 @@
-﻿using HtmlAgilityPack;
-using PoLaKoSz.Portfolio.DataAccessLayer;
-using System;
-using System.Net;
-using System.Text;
+﻿using System;
+using System.Net.Http;
 
 namespace PoLaKoSz.Portfolio
 {
@@ -16,18 +13,17 @@ namespace PoLaKoSz.Portfolio
         /// <summary>
         /// Call the endpoint throw this class
         /// </summary>
-        public IWebClient WebClient { get; set; }
+        public HttpClient HttpClient { get; set; }
 
         public EndPoint(string relativeAddress)
             : this(new Uri(new Uri(Constans.BaseAddress), relativeAddress)) { }
         public EndPoint(Uri endpointAddress)
-            : this(endpointAddress, new DataAccessLayer.WebClient()) { }
-        public EndPoint(Uri endpointAddress, IWebClient webClient)
+            : this(endpointAddress, new HttpClient()) { }
+        public EndPoint(Uri endpointAddress, HttpClient httpClient)
         {
             EndpointAddress = endpointAddress;
 
-            WebClient = webClient;
-            WebClient.Encoding = Encoding.GetEncoding("ISO-8859-1");
+            HttpClient = httpClient;
         }
 
         protected string GetAsync(string additionalPath)
@@ -35,33 +31,12 @@ namespace PoLaKoSz.Portfolio
             var uriBuilder = new UriBuilder(EndpointAddress);
             uriBuilder.Path += additionalPath;
 
-            string response = WebClient.DownloadString(uriBuilder.Uri);
+            string response = HttpClient.GetStringAsync(uriBuilder.Uri).ConfigureAwait(false)
+                .GetAwaiter().GetResult();
 
             System.IO.File.WriteAllText($"{DateTime.Now.ToString("HH_mm_ss")}.html", response);
 
             return response;
-        }
-
-        /// <summary>
-        /// Run middlewares and download the EndpointAddress's contet
-        /// </summary>
-        /// <returns>Raw source code modified by middlewares</returns>
-        /// <exception cref="WebException"></exception>
-        protected string LoadWebpage()
-        {
-            string sourceCode = "";
-
-            try
-            {
-                sourceCode = WebClient.DownloadString(EndpointAddress);
-            }
-            catch (WebException ex)
-            {
-                string message = $"HTTP status: {ex.Status}. Can not load URL: {EndpointAddress.ToString()}";
-                throw new WebException(message, ex);
-            }
-
-            return sourceCode;
         }
     }
 }
