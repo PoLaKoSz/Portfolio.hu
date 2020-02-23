@@ -5,26 +5,33 @@ namespace PoLaKoSz.Portfolio
 {
     public abstract class EndPoint
     {
-        /// <summary>
-        /// This URL will be called in the web request
-        /// </summary>
-        public Uri EndpointAddress { get; set; }
-
-        /// <summary>
-        /// Call the endpoint throw this class
-        /// </summary>
-        public HttpClient HttpClient { get; set; }
-
         public EndPoint(string relativeAddress)
-            : this(new Uri(new Uri(Constans.BaseAddress), relativeAddress)) { }
+            : this(new Uri(new Uri(Constans.BaseAddress), relativeAddress))
+        {
+        }
+
         public EndPoint(Uri endpointAddress)
-            : this(endpointAddress, new HttpClient()) { }
+            : this(endpointAddress, new HttpClient())
+        {
+        }
+
         public EndPoint(Uri endpointAddress, HttpClient httpClient)
         {
             EndpointAddress = endpointAddress;
 
             HttpClient = httpClient;
         }
+
+        /// <summary>
+        /// Gets or sets the URL that will be called in the web request.
+        /// </summary>
+        public Uri EndpointAddress { get; set; }
+
+        /// <summary>
+        /// Gets or sets the <see cref="HttpClient"/> which will call the
+        /// endpoint address.
+        /// </summary>
+        public HttpClient HttpClient { get; set; }
 
         protected string GetAsync(string additionalPath)
         {

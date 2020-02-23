@@ -15,10 +15,14 @@ namespace PoLaKoSz.Portfolio.EndPoints
         }
 
         public StockMarketEndPoint()
-            : this(new HttpClient()) { }
+            : this(new HttpClient())
+        {
+        }
 
         public StockMarketEndPoint(HttpClient httpClient)
-            : base(new Uri("https://data.portfolio.hu/all/json/"), httpClient) { }
+            : base(new Uri("https://data.portfolio.hu/all/json/"), httpClient)
+        {
+        }
 
         public Share Get(ShareType stock)
         {

@@ -6,7 +6,7 @@ namespace PoLaKoSz.Portfolio.Models
     public class StockDeal : IEquatable<StockDeal>
     {
         /// <summary>
-        /// Initialize a new instance.
+        /// Initializes a new instance of the <see cref="StockDeal"/> class.
         /// </summary>
         /// <param name="at">UTC time when the successfull deal happend.</param>
         /// <param name="direction">The price direction compared to the previous deal.
@@ -19,18 +19,24 @@ namespace PoLaKoSz.Portfolio.Models
             ID = id;
             At = at;
             Direction = ConvertToInt(direction);
-            Unknown = unknown ?? "";
+            Unknown = unknown ?? string.Empty;
             Price = price;
             Count = count;
             Percentage = percentage;
         }
 
         public int ID { get; }
+
         public DateTime At { get; }
+
         public int Direction { get; }
+
         public string Unknown { get; }
+
         public double Price { get; }
+
         public int Count { get; }
+
         public double Percentage { get; }
 
         public override bool Equals(object obj)
@@ -53,24 +59,30 @@ namespace PoLaKoSz.Portfolio.Models
         public override int GetHashCode()
         {
             var hashCode = -1397032362;
-            hashCode = hashCode * -1521134295 + ID.GetHashCode();
-            hashCode = hashCode * -1521134295 + At.GetHashCode();
-            hashCode = hashCode * -1521134295 + Direction.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Unknown);
-            hashCode = hashCode * -1521134295 + Price.GetHashCode();
-            hashCode = hashCode * -1521134295 + Count.GetHashCode();
-            hashCode = hashCode * -1521134295 + Percentage.GetHashCode();
+            hashCode = (hashCode * -1521134295) + ID.GetHashCode();
+            hashCode = (hashCode * -1521134295) + At.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Direction.GetHashCode();
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Unknown);
+            hashCode = (hashCode * -1521134295) + Price.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Count.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Percentage.GetHashCode();
             return hashCode;
         }
 
         private int ConvertToInt(string direction)
         {
             if (direction == "+")
+            {
                 return 1;
-            else if (direction == "" || direction == " ")
+            }
+            else if (direction == string.Empty || direction == " ")
+            {
                 return 0;
+            }
             else if (direction == "-")
+            {
                 return -1;
+            }
 
             throw new ArgumentException($"Unknown StockDeal direction: {direction}", nameof(direction));
         }

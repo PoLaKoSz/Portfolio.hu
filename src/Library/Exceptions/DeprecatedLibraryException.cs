@@ -15,7 +15,9 @@ namespace PoLaKoSz.Portfolio.Exceptions
         /// </summary>
         /// <param name="message">Non null.</param>
         public DeprecatedLibraryException(string message)
-            : base(message) { }
+            : base(message)
+        {
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DeprecatedLibraryException"/>
@@ -26,6 +28,8 @@ namespace PoLaKoSz.Portfolio.Exceptions
         /// <param name="innerException">The exception that is the cause of the current exception, or
         /// a null reference if no inner exception is specified.</param>
         public DeprecatedLibraryException(string message, Exception innerException)
-            : base(message, innerException) { }
+            : base(message, innerException)
+        {
+        }
     }
 }

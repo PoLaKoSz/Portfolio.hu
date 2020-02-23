@@ -13,16 +13,20 @@ namespace PoLaKoSz.Portfolio.Middlewares
             HtmlNode articleNode = rootNode.SelectSingleNode("//*[@id=\"cikk\"]");
 
             if (articleNode == null)
+            {
                 return rootNode;
+            }
 
             HtmlNodeCollection imageNodes = articleNode.SelectNodes("img");
 
             if (imageNodes == null)
+            {
                 return rootNode;
+            }
 
             foreach (HtmlNode imageNode in imageNodes)
             {
-                imageNode.SetAttributeValue("src", Constans.BaseAddress + imageNode.GetAttributeValue("src", ""));
+                imageNode.SetAttributeValue("src", Constans.BaseAddress + imageNode.GetAttributeValue("src", string.Empty));
             }
 
             return articleNode;

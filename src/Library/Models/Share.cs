@@ -65,31 +65,57 @@ namespace PoLaKoSz.Portfolio.Models
         }
 
         public string SubGroup { get; }
+
         public TimeSpan OpenTime { get; }
+
         public TimeSpan CloseTime { get; }
+
         public int Market { get; }
+
         public string Board { get; }
+
         public double D { get; }
+
         public double Suly { get; }
+
         public double DBumix { get; }
+
         public double SulyBumix { get; }
+
         public int MovingCount { get; }
+
         public int Expire { get; }
+
         public double InterestRate { get; }
+
         public double SettlementPercentage { get; }
+
         public double IndPrice { get; }
+
         public DateTime IndPriceAt { get; }
+
         public double AllTimeMin { get; }
+
         public double AllTimeMax { get; }
+
         public double Average { get; }
+
         public string Symbol { get; }
+
         public double FaceValue { get; }
+
         public string FaceValueCurrency { get; }
+
         public string Category { get; }
+
         public string ExpireAt { get; }
+
         public bool IsActive { get; }
+
         public string LastDate { get; }
+
         public string LastHtmlDate { get; }
+
         public string CloseDate { get; }
     }
 }

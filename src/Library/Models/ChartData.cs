@@ -39,10 +39,10 @@ namespace PoLaKoSz.Portfolio.Models
         public override int GetHashCode()
         {
             var hashCode = -777482270;
-            hashCode = hashCode * -1521134295 + StartTime.GetHashCode();
-            hashCode = hashCode * -1521134295 + EndTime.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<List<StockPrice>>.Default.GetHashCode(Prices);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(DateFormat);
+            hashCode = (hashCode * -1521134295) + StartTime.GetHashCode();
+            hashCode = (hashCode * -1521134295) + EndTime.GetHashCode();
+            hashCode = (hashCode * -1521134295) + EqualityComparer<List<StockPrice>>.Default.GetHashCode(Prices);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(DateFormat);
             return hashCode;
         }
     }

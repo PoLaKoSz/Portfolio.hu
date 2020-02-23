@@ -33,9 +33,9 @@ namespace PoLaKoSz.Portfolio.Models
         public override int GetHashCode()
         {
             var hashCode = -1957751464;
-            hashCode = hashCode * -1521134295 + Value.GetHashCode();
-            hashCode = hashCode * -1521134295 + At.GetHashCode();
-            hashCode = hashCode * -1521134295 + Traffic.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Value.GetHashCode();
+            hashCode = (hashCode * -1521134295) + At.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Traffic.GetHashCode();
             return hashCode;
         }
     }

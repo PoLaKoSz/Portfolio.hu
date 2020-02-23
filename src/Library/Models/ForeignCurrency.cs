@@ -46,11 +46,11 @@ namespace PoLaKoSz.Portfolio.Models
         public override int GetHashCode()
         {
             var hashCode = 1186860024;
-            hashCode = hashCode * -1521134295 + base.GetHashCode();
-            hashCode = hashCode * -1521134295 + MarkersID.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(MarketCode);
-            hashCode = hashCode * -1521134295 + DataStart.GetHashCode();
-            hashCode = hashCode * -1521134295 + DataEnd.GetHashCode();
+            hashCode = (hashCode * -1521134295) + base.GetHashCode();
+            hashCode = (hashCode * -1521134295) + MarkersID.GetHashCode();
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(MarketCode);
+            hashCode = (hashCode * -1521134295) + DataStart.GetHashCode();
+            hashCode = (hashCode * -1521134295) + DataEnd.GetHashCode();
             hashCode = hashCode * base.GetHashCode();
             return hashCode;
         }

@@ -35,12 +35,16 @@ namespace PoLaKoSz.Portfolio.Deserializers
 
             if (subscriptionTitleNode != null &&
                 subscriptionTitleNode.InnerText == "Elõfizetõi tartalom")
+            {
                 throw new ArchivedArticleException("This article can't be parsed without a subscription!");
+            }
 
             var articleNode = htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"cikk\"]");
 
             if (articleNode == null)
+            {
                 throw new NodeNotFoundException("Can't find DIV with ID cikk. This is not a valid article!");
+            }
 
             return articleNode;
         }
@@ -50,7 +54,9 @@ namespace PoLaKoSz.Portfolio.Deserializers
             var titleNode = articleNode.SelectSingleNode("./h1");
 
             if (titleNode == null)
+            {
                 throw new NodeNotFoundException("Can't find article title. This is not a valid article!");
+            }
 
             return titleNode.InnerText;
         }

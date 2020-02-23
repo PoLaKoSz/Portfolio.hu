@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
 
 namespace PoLaKoSz.Portfolio.Deserializers
 {
@@ -15,7 +15,11 @@ namespace PoLaKoSz.Portfolio.Deserializers
         /// <param name="propertyName">The desired property's name.</param>
         /// <param name="jObject">The container of the property.</param>
         /// <returns>Non null string.</returns>
-        /// <exception cref="FormatException" />
+        /// <exception cref="FormatException">Occurs when the property with
+        /// the supplied name does not exists within the <see cref="JObject"/>
+        /// or the value conversation didn't succeeded. The container of the parameter
+        /// <see cref="JObject"/> serialized to JSON string will be appended to the
+        /// Message.</exception>
         protected virtual string ToString(string propertyName, JObject jObject)
         {
             try
@@ -26,7 +30,7 @@ namespace PoLaKoSz.Portfolio.Deserializers
 
                 if (value == null)
                 {
-                    return "";
+                    return string.Empty;
                 }
                 else
                 {
@@ -44,14 +48,19 @@ namespace PoLaKoSz.Portfolio.Deserializers
         /// </summary>
         /// <param name="propertyName">The desired property's name.</param>
         /// <param name="jObject">The container of the property.</param>
-        /// <exception cref="FormatException" />
+        /// <returns>Data converted to <see cref="int"/>.</returns>
+        /// <exception cref="FormatException">Occurs when the property with
+        /// the supplied name does not exists within the <see cref="JObject"/>
+        /// or the value conversation didn't succeeded. The container of the parameter
+        /// <see cref="JObject"/> serialized to JSON string will be appended to the
+        /// Message.</exception>
         protected virtual int ToInt(string propertyName, JObject jObject)
         {
             try
             {
                 var jToken = GetProperty(propertyName, jObject);
 
-                if (ToString(propertyName, jObject) == "")
+                if (ToString(propertyName, jObject) == string.Empty)
                 {
                     return 0;
                 }
@@ -78,14 +87,19 @@ namespace PoLaKoSz.Portfolio.Deserializers
         /// </summary>
         /// <param name="propertyName">The desired property's name.</param>
         /// <param name="jObject">The container of the property.</param>
-        /// <exception cref="FormatException" />
+        /// <returns>Data converted to <see cref="double"/>.</returns>
+        /// <exception cref="FormatException">Occurs when the property with
+        /// the supplied name does not exists within the <see cref="JObject"/>
+        /// or the value conversation didn't succeeded. The container of the parameter
+        /// <see cref="JObject"/> serialized to JSON string will be appended to the
+        /// Message.</exception>
         protected virtual double ToDouble(string propertyName, JObject jObject)
         {
             try
             {
                 var jToken = GetProperty(propertyName, jObject);
 
-                if (ToString(propertyName, jObject) == "")
+                if (ToString(propertyName, jObject) == string.Empty)
                 {
                     return 0;
                 }
@@ -105,7 +119,12 @@ namespace PoLaKoSz.Portfolio.Deserializers
         /// </summary>
         /// <param name="propertyName">The desired property's name.</param>
         /// <param name="jObject">The container of the property.</param>
-        /// <exception cref="FormatException" />
+        /// <returns>Data converted to <see cref="bool"/>.</returns>
+        /// <exception cref="FormatException">Occurs when the property with
+        /// the supplied name does not exists within the <see cref="JObject"/>
+        /// or the value conversation didn't succeeded. The container of the parameter
+        /// <see cref="JObject"/> serialized to JSON string will be appended to the
+        /// Message.</exception>
         protected virtual bool ToBool(string propertyName, JObject jObject)
         {
             try
@@ -118,7 +137,7 @@ namespace PoLaKoSz.Portfolio.Deserializers
                 {
                     return true;
                 }
-                else if (stringValue == "0" || stringValue == "")
+                else if (stringValue == "0" || stringValue == string.Empty)
                 {
                     return false;
                 }
@@ -138,7 +157,12 @@ namespace PoLaKoSz.Portfolio.Deserializers
         /// </summary>
         /// <param name="propertyName">The desired property's name.</param>
         /// <param name="jObject">The container of the property.</param>
-        /// <exception cref="FormatException" />
+        /// <returns>UTC <see cref="DateTime"/>.</returns>
+        /// <exception cref="FormatException">Occurs when the property with
+        /// the supplied name does not exists within the <see cref="JObject"/>
+        /// or the value conversation didn't succeeded. The container of the parameter
+        /// <see cref="JObject"/> serialized to JSON string will be appended to the
+        /// Message.</exception>
         protected virtual DateTime FromUnixTimestamp(string propertyName, JObject jObject)
         {
             try
@@ -148,12 +172,12 @@ namespace PoLaKoSz.Portfolio.Deserializers
                 var secondsString = ToString(propertyName, jObject);
                 long seconds = 0;
 
-                if (secondsString != "")
+                if (secondsString != string.Empty)
                 {
                     seconds = long.Parse(secondsString);
                 }
 
-                if (seconds < 0 || secondsString == "")
+                if (seconds < 0 || secondsString == string.Empty)
                 {
                     throw new FormatException($"Value is less than 0 or its an empty string.");
                 }
@@ -172,7 +196,12 @@ namespace PoLaKoSz.Portfolio.Deserializers
         /// </summary>
         /// <param name="propertyName">The desired property's name.</param>
         /// <param name="jObject">The container of the property.</param>
-        /// <exception cref="FormatException" />
+        /// <returns>Non null object.</returns>
+        /// <exception cref="FormatException">Occurs when the property with
+        /// the supplied name does not exists within the <see cref="JObject"/>
+        /// or the value conversation didn't succeeded. The container of the parameter
+        /// <see cref="JObject"/> serialized to JSON string will be appended to the
+        /// Message.</exception>
         protected virtual TimeSpan AsDays(string propertyName, JObject jObject)
         {
             var days = ToInt(propertyName, jObject);
@@ -185,7 +214,12 @@ namespace PoLaKoSz.Portfolio.Deserializers
         /// </summary>
         /// <param name="propertyName">The desired property's name.</param>
         /// <param name="jObject">The container of the property.</param>
-        /// <exception cref="FormatException" />
+        /// <returns>Always 1.</returns>
+        /// <exception cref="FormatException">Occurs when the property with
+        /// the supplied name does not exists within the <see cref="JObject"/>
+        /// or the value conversation didn't succeeded. The container of the parameter
+        /// <see cref="JObject"/> serialized to JSON string will be appended to the
+        /// Message.</exception>
         protected virtual int FromUnnecessaryObject(string propertyName, JObject jObject)
         {
             try
@@ -203,7 +237,6 @@ namespace PoLaKoSz.Portfolio.Deserializers
             {
                 throw new FormatException(WhenExceptionOccur(propertyName, jObject), ex);
             }
-            
         }
 
         /// <summary>
@@ -228,7 +261,7 @@ namespace PoLaKoSz.Portfolio.Deserializers
         /// Gets the value stored in the JToken.
         /// </summary>
         /// <typeparam name="T">The tpye of the value stored in the JToken.</typeparam>
-        /// <param name="jToken"></param>
+        /// <param name="jToken">Where the data stored.</param>
         /// <exception cref="FormatException">Occurs when the value conversation
         /// didn't succeeded. The container of the parameter <see cref="JToken"/>
         /// serialized to JSON string will be appended to the Message.</exception>

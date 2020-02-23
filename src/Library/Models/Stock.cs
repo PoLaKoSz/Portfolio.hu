@@ -195,104 +195,105 @@ namespace PoLaKoSz.Portfolio.Models
         }
 
         /// <summary>
-        /// Initialize a new instance.
+        /// Initializes a new instance of the <see cref="Stock"/> class.
         /// </summary>
         /// <param name="stock">Shallow copied non null object.</param>
         protected Stock(Stock stock)
             : this(
                   stock.IsStarted,
-                    stock.TickerID,
-                    stock.Ticker,
-                    stock.Type,
-                    stock.FullName,
-                    stock.Prefix,
-                    stock.Currency,
-                    stock.ISIN,
-                    stock.Name,
-                    stock.ShortName,
-                    stock.ChartName,
-                    stock.Decimals,
-                    stock.ForgDecimals,
-                    stock.Open,
-                    stock.Close,
-                    stock.Last,
-                    stock.LastHTML,
-                    stock.LastSize,
-                    stock.LastTime,
-                    stock.LastHtmlTime,
-                    stock.Change,
-                    stock.ChangePercentage,
-                    stock.Min,
-                    stock.Max,
-                    stock.Bid,
-                    stock.BidSize,
-                    stock.BidNum,
-                    stock.BidComp,
-                    stock.Ask,
-                    stock.AskSize,
-                    stock.AskNum,
-                    stock.AskComp,
-                    stock.Bid5,
-                    stock.Bid5Date,
-                    stock.Bid5Size,
-                    stock.Bid5Num,
-                    stock.Bid5Comp,
-                    stock.Ask5,
-                    stock.Ask5Date,
-                    stock.Ask5Size,
-                    stock.Ask5Num,
-                    stock.Ask5Comp,
-                    stock.DealsCount,
-                    stock.Deals,
-                    stock.Traffic,
-                    stock.TrafficCount,
-                    stock.OpenInterest,
-                    stock.Status,
-                    stock.PanelJS,
-                    stock.ID,
-                    stock.RealTime,
-                    stock.Pe2000,
-                    stock.Pe2001,
-                    stock.CloseOneMonth,
-                    stock.CloseOneMonthInterval,
-                    stock.CloseThreeMonth,
-                    stock.CloseThreeMonthInterval,
-                    stock.CloseOneYear,
-                    stock.CloseOneYearInterval,
-                    stock.OneMonthVolatility,
-                    stock.ThreeMonthVolatility,
-                    stock.OneYearVolatility,
-                    stock.Eps2000,
-                    stock.Eps2001,
-                    stock.MinOneYear,
-                    stock.MinOneYearAt,
-                    stock.MaxOneYear,
-                    stock.MaxOneYearAt,
-                    stock.MinOfAllTime,
-                    stock.MinOfAllTimeAt,
-                    stock.MaxOfAllTime,
-                    stock.MaxOfAllTimeAt,
-                    stock.CloseMinOneYear,
-                    stock.CloseMinOneYearAt,
-                    stock.CloseMaxOneYear,
-                    stock.CloseMaxOneYearAt,
-                    stock.CloseMinAllTime,
-                    stock.CloseMinAllTimeAt,
-                    stock.CloseMaxOfAllTime,
-                    stock.CloseMaxAllTimeAt,
-                    stock.TrafficAvgInSixMonth,
-                    stock.TrafficAvgInOneYear,
-                    stock.StartCount,
-                    stock.Kapit,
-                    stock.BuxKapit,
-                    stock.ChangeInOneMonth,
-                    stock.ChangeInThreeMonth,
-                    stock.ChangeInOneYear,
-                    stock.StartPrice,
-                    stock.MinInOneYear,
-                    stock.MaxInOneYear,
-                    stock.ImageData)
-        { }
+                  stock.TickerID,
+                  stock.Ticker,
+                  stock.Type,
+                  stock.FullName,
+                  stock.Prefix,
+                  stock.Currency,
+                  stock.ISIN,
+                  stock.Name,
+                  stock.ShortName,
+                  stock.ChartName,
+                  stock.Decimals,
+                  stock.ForgDecimals,
+                  stock.Open,
+                  stock.Close,
+                  stock.Last,
+                  stock.LastHTML,
+                  stock.LastSize,
+                  stock.LastTime,
+                  stock.LastHtmlTime,
+                  stock.Change,
+                  stock.ChangePercentage,
+                  stock.Min,
+                  stock.Max,
+                  stock.Bid,
+                  stock.BidSize,
+                  stock.BidNum,
+                  stock.BidComp,
+                  stock.Ask,
+                  stock.AskSize,
+                  stock.AskNum,
+                  stock.AskComp,
+                  stock.Bid5,
+                  stock.Bid5Date,
+                  stock.Bid5Size,
+                  stock.Bid5Num,
+                  stock.Bid5Comp,
+                  stock.Ask5,
+                  stock.Ask5Date,
+                  stock.Ask5Size,
+                  stock.Ask5Num,
+                  stock.Ask5Comp,
+                  stock.DealsCount,
+                  stock.Deals,
+                  stock.Traffic,
+                  stock.TrafficCount,
+                  stock.OpenInterest,
+                  stock.Status,
+                  stock.PanelJS,
+                  stock.ID,
+                  stock.RealTime,
+                  stock.Pe2000,
+                  stock.Pe2001,
+                  stock.CloseOneMonth,
+                  stock.CloseOneMonthInterval,
+                  stock.CloseThreeMonth,
+                  stock.CloseThreeMonthInterval,
+                  stock.CloseOneYear,
+                  stock.CloseOneYearInterval,
+                  stock.OneMonthVolatility,
+                  stock.ThreeMonthVolatility,
+                  stock.OneYearVolatility,
+                  stock.Eps2000,
+                  stock.Eps2001,
+                  stock.MinOneYear,
+                  stock.MinOneYearAt,
+                  stock.MaxOneYear,
+                  stock.MaxOneYearAt,
+                  stock.MinOfAllTime,
+                  stock.MinOfAllTimeAt,
+                  stock.MaxOfAllTime,
+                  stock.MaxOfAllTimeAt,
+                  stock.CloseMinOneYear,
+                  stock.CloseMinOneYearAt,
+                  stock.CloseMaxOneYear,
+                  stock.CloseMaxOneYearAt,
+                  stock.CloseMinAllTime,
+                  stock.CloseMinAllTimeAt,
+                  stock.CloseMaxOfAllTime,
+                  stock.CloseMaxAllTimeAt,
+                  stock.TrafficAvgInSixMonth,
+                  stock.TrafficAvgInOneYear,
+                  stock.StartCount,
+                  stock.Kapit,
+                  stock.BuxKapit,
+                  stock.ChangeInOneMonth,
+                  stock.ChangeInThreeMonth,
+                  stock.ChangeInOneYear,
+                  stock.StartPrice,
+                  stock.MinInOneYear,
+                  stock.MaxInOneYear,
+                  stock.ImageData)
+        {
+        }
 
         public bool IsStarted { get; }
 
@@ -565,80 +566,80 @@ namespace PoLaKoSz.Portfolio.Models
         public override int GetHashCode()
         {
             var hashCode = -1519320215;
-            hashCode = hashCode * -1521134295 + IsStarted.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(TickerID);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Ticker);
-            hashCode = hashCode * -1521134295 + Type.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(FullName);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Prefix);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Currency);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(ISIN);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Name);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(ShortName);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(ChartName);
-            hashCode = hashCode * -1521134295 + Decimals.GetHashCode();
-            hashCode = hashCode * -1521134295 + ForgDecimals.GetHashCode();
-            hashCode = hashCode * -1521134295 + Open.GetHashCode();
-            hashCode = hashCode * -1521134295 + Close.GetHashCode();
-            hashCode = hashCode * -1521134295 + Last.GetHashCode();
-            hashCode = hashCode * -1521134295 + LastHTML.GetHashCode();
-            hashCode = hashCode * -1521134295 + LastSize.GetHashCode();
-            hashCode = hashCode * -1521134295 + LastTime.GetHashCode();
-            hashCode = hashCode * -1521134295 + LastHtmlTime.GetHashCode();
-            hashCode = hashCode * -1521134295 + Change.GetHashCode();
-            hashCode = hashCode * -1521134295 + ChangePercentage.GetHashCode();
-            hashCode = hashCode * -1521134295 + Min.GetHashCode();
-            hashCode = hashCode * -1521134295 + Max.GetHashCode();
-            hashCode = hashCode * -1521134295 + DealsCount.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<List<StockDeal>>.Default.GetHashCode(Deals);
-            hashCode = hashCode * -1521134295 + Traffic.GetHashCode();
-            hashCode = hashCode * -1521134295 + TrafficCount.GetHashCode();
-            hashCode = hashCode * -1521134295 + OpenInterest.GetHashCode();
-            hashCode = hashCode * -1521134295 + Status.GetHashCode();
-            hashCode = hashCode * -1521134295 + PanelJS.GetHashCode();
-            hashCode = hashCode * -1521134295 + ID.GetHashCode();
-            hashCode = hashCode * -1521134295 + RealTime.GetHashCode();
-            hashCode = hashCode * -1521134295 + Pe2000.GetHashCode();
-            hashCode = hashCode * -1521134295 + Pe2001.GetHashCode();
-            hashCode = hashCode * -1521134295 + CloseOneMonth.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<TimeSpan>.Default.GetHashCode(CloseOneMonthInterval);
-            hashCode = hashCode * -1521134295 + CloseThreeMonth.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<TimeSpan>.Default.GetHashCode(CloseThreeMonthInterval);
-            hashCode = hashCode * -1521134295 + CloseOneYear.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<TimeSpan>.Default.GetHashCode(CloseOneYearInterval);
-            hashCode = hashCode * -1521134295 + OneMonthVolatility.GetHashCode();
-            hashCode = hashCode * -1521134295 + ThreeMonthVolatility.GetHashCode();
-            hashCode = hashCode * -1521134295 + OneYearVolatility.GetHashCode();
-            hashCode = hashCode * -1521134295 + Eps2000.GetHashCode();
-            hashCode = hashCode * -1521134295 + Eps2001.GetHashCode();
-            hashCode = hashCode * -1521134295 + MinOneYear.GetHashCode();
-            hashCode = hashCode * -1521134295 + MinOneYearAt.GetHashCode();
-            hashCode = hashCode * -1521134295 + MaxOneYear.GetHashCode();
-            hashCode = hashCode * -1521134295 + MaxOneYearAt.GetHashCode();
-            hashCode = hashCode * -1521134295 + MinOfAllTime.GetHashCode();
-            hashCode = hashCode * -1521134295 + MinOfAllTimeAt.GetHashCode();
-            hashCode = hashCode * -1521134295 + MaxOfAllTime.GetHashCode();
-            hashCode = hashCode * -1521134295 + MaxOfAllTimeAt.GetHashCode();
-            hashCode = hashCode * -1521134295 + CloseMinOneYear.GetHashCode();
-            hashCode = hashCode * -1521134295 + CloseMinOneYearAt.GetHashCode();
-            hashCode = hashCode * -1521134295 + CloseMaxOneYear.GetHashCode();
-            hashCode = hashCode * -1521134295 + CloseMaxOneYearAt.GetHashCode();
-            hashCode = hashCode * -1521134295 + CloseMinAllTime.GetHashCode();
-            hashCode = hashCode * -1521134295 + CloseMinAllTimeAt.GetHashCode();
-            hashCode = hashCode * -1521134295 + CloseMaxOfAllTime.GetHashCode();
-            hashCode = hashCode * -1521134295 + CloseMaxAllTimeAt.GetHashCode();
-            hashCode = hashCode * -1521134295 + TrafficAvgInSixMonth.GetHashCode();
-            hashCode = hashCode * -1521134295 + TrafficAvgInOneYear.GetHashCode();
-            hashCode = hashCode * -1521134295 + StartCount.GetHashCode();
-            hashCode = hashCode * -1521134295 + Kapit.GetHashCode();
-            hashCode = hashCode * -1521134295 + BuxKapit.GetHashCode();
-            hashCode = hashCode * -1521134295 + ChangeInOneMonth.GetHashCode();
-            hashCode = hashCode * -1521134295 + ChangeInThreeMonth.GetHashCode();
-            hashCode = hashCode * -1521134295 + ChangeInOneYear.GetHashCode();
-            hashCode = hashCode * -1521134295 + StartPrice.GetHashCode();
-            hashCode = hashCode * -1521134295 + MinInOneYear.GetHashCode();
-            hashCode = hashCode * -1521134295 + MaxInOneYear.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<ChartData>.Default.GetHashCode(ImageData);
+            hashCode = (hashCode * -1521134295) + IsStarted.GetHashCode();
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(TickerID);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Ticker);
+            hashCode = (hashCode * -1521134295) + Type.GetHashCode();
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(FullName);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Prefix);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Currency);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(ISIN);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Name);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(ShortName);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(ChartName);
+            hashCode = (hashCode * -1521134295) + Decimals.GetHashCode();
+            hashCode = (hashCode * -1521134295) + ForgDecimals.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Open.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Close.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Last.GetHashCode();
+            hashCode = (hashCode * -1521134295) + LastHTML.GetHashCode();
+            hashCode = (hashCode * -1521134295) + LastSize.GetHashCode();
+            hashCode = (hashCode * -1521134295) + LastTime.GetHashCode();
+            hashCode = (hashCode * -1521134295) + LastHtmlTime.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Change.GetHashCode();
+            hashCode = (hashCode * -1521134295) + ChangePercentage.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Min.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Max.GetHashCode();
+            hashCode = (hashCode * -1521134295) + DealsCount.GetHashCode();
+            hashCode = (hashCode * -1521134295) + EqualityComparer<List<StockDeal>>.Default.GetHashCode(Deals);
+            hashCode = (hashCode * -1521134295) + Traffic.GetHashCode();
+            hashCode = (hashCode * -1521134295) + TrafficCount.GetHashCode();
+            hashCode = (hashCode * -1521134295) + OpenInterest.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Status.GetHashCode();
+            hashCode = (hashCode * -1521134295) + PanelJS.GetHashCode();
+            hashCode = (hashCode * -1521134295) + ID.GetHashCode();
+            hashCode = (hashCode * -1521134295) + RealTime.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Pe2000.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Pe2001.GetHashCode();
+            hashCode = (hashCode * -1521134295) + CloseOneMonth.GetHashCode();
+            hashCode = (hashCode * -1521134295) + EqualityComparer<TimeSpan>.Default.GetHashCode(CloseOneMonthInterval);
+            hashCode = (hashCode * -1521134295) + CloseThreeMonth.GetHashCode();
+            hashCode = (hashCode * -1521134295) + EqualityComparer<TimeSpan>.Default.GetHashCode(CloseThreeMonthInterval);
+            hashCode = (hashCode * -1521134295) + CloseOneYear.GetHashCode();
+            hashCode = (hashCode * -1521134295) + EqualityComparer<TimeSpan>.Default.GetHashCode(CloseOneYearInterval);
+            hashCode = (hashCode * -1521134295) + OneMonthVolatility.GetHashCode();
+            hashCode = (hashCode * -1521134295) + ThreeMonthVolatility.GetHashCode();
+            hashCode = (hashCode * -1521134295) + OneYearVolatility.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Eps2000.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Eps2001.GetHashCode();
+            hashCode = (hashCode * -1521134295) + MinOneYear.GetHashCode();
+            hashCode = (hashCode * -1521134295) + MinOneYearAt.GetHashCode();
+            hashCode = (hashCode * -1521134295) + MaxOneYear.GetHashCode();
+            hashCode = (hashCode * -1521134295) + MaxOneYearAt.GetHashCode();
+            hashCode = (hashCode * -1521134295) + MinOfAllTime.GetHashCode();
+            hashCode = (hashCode * -1521134295) + MinOfAllTimeAt.GetHashCode();
+            hashCode = (hashCode * -1521134295) + MaxOfAllTime.GetHashCode();
+            hashCode = (hashCode * -1521134295) + MaxOfAllTimeAt.GetHashCode();
+            hashCode = (hashCode * -1521134295) + CloseMinOneYear.GetHashCode();
+            hashCode = (hashCode * -1521134295) + CloseMinOneYearAt.GetHashCode();
+            hashCode = (hashCode * -1521134295) + CloseMaxOneYear.GetHashCode();
+            hashCode = (hashCode * -1521134295) + CloseMaxOneYearAt.GetHashCode();
+            hashCode = (hashCode * -1521134295) + CloseMinAllTime.GetHashCode();
+            hashCode = (hashCode * -1521134295) + CloseMinAllTimeAt.GetHashCode();
+            hashCode = (hashCode * -1521134295) + CloseMaxOfAllTime.GetHashCode();
+            hashCode = (hashCode * -1521134295) + CloseMaxAllTimeAt.GetHashCode();
+            hashCode = (hashCode * -1521134295) + TrafficAvgInSixMonth.GetHashCode();
+            hashCode = (hashCode * -1521134295) + TrafficAvgInOneYear.GetHashCode();
+            hashCode = (hashCode * -1521134295) + StartCount.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Kapit.GetHashCode();
+            hashCode = (hashCode * -1521134295) + BuxKapit.GetHashCode();
+            hashCode = (hashCode * -1521134295) + ChangeInOneMonth.GetHashCode();
+            hashCode = (hashCode * -1521134295) + ChangeInThreeMonth.GetHashCode();
+            hashCode = (hashCode * -1521134295) + ChangeInOneYear.GetHashCode();
+            hashCode = (hashCode * -1521134295) + StartPrice.GetHashCode();
+            hashCode = (hashCode * -1521134295) + MinInOneYear.GetHashCode();
+            hashCode = (hashCode * -1521134295) + MaxInOneYear.GetHashCode();
+            hashCode = (hashCode * -1521134295) + EqualityComparer<ChartData>.Default.GetHashCode(ImageData);
             return hashCode;
         }
 

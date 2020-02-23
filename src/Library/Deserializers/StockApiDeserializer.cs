@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using System;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 using PoLaKoSz.Portfolio.Exceptions;
 using PoLaKoSz.Portfolio.Models;
-using System;
-using System.Collections.Generic;
 
 namespace PoLaKoSz.Portfolio.Deserializers
 {
@@ -350,7 +350,7 @@ namespace PoLaKoSz.Portfolio.Deserializers
 
             return new StockDeal(id, at, direction, unknown, price, count, percentage);
         }
-        
+
         private ChartData ToChartData(string propertyName, JObject jObject)
         {
             JObject container = (JObject)jObject.SelectToken(propertyName);
