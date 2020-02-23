@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using PoLaKoSz.Portfolio.EndPoints;
 using System;
 
 namespace PoLaKoSz.Portfolio.Tests.Unit

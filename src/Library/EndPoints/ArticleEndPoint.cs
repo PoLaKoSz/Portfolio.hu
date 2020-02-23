@@ -2,7 +2,7 @@
 using PoLaKoSz.Portfolio.Deserializers;
 using PoLaKoSz.Portfolio.Models;
 
-namespace PoLaKoSz.Portfolio
+namespace PoLaKoSz.Portfolio.EndPoints
 {
     public class ArticleEndPoint : EndPoint
     {

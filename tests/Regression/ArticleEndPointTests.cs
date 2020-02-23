@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using PoLaKoSz.Portfolio.EndPoints;
 using PoLaKoSz.Portfolio.Exceptions;
 using System;
 
