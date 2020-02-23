@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using PoLaKoSz.Portfolio.EndPoints;
 using PoLaKoSz.Portfolio.Models;
+using System.IO;
 
 namespace PoLaKoSz.Portfolio.Tests.Integration.EndPoints
 {
@@ -729,7 +730,8 @@ namespace PoLaKoSz.Portfolio.Tests.Integration.EndPoints
         {
             var webClient = new FakeWebClient();
 
-            string sourceCode = System.IO.File.ReadAllText($"StaticResources\\Stocks\\{fileName}.html");
+            string sourceCode = File.ReadAllText(
+                Path.Combine("StaticResources", "Stocks", $"{fileName}.html"));
 
             webClient.SetServerResponse(sourceCode);
 
