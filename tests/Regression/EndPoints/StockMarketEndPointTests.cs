@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Threading.Tasks;
+using NUnit.Framework;
 using PoLaKoSz.Portfolio.EndPoints;
 using PoLaKoSz.Portfolio.Models;
 
@@ -15,15 +16,17 @@ namespace PoLaKoSz.Portfolio.Tests.Regression.EndPoints
         }
 
         [Test]
-        public void CanDeserializeForexStock()
+        public async Task CanDeserializeForexStock()
         {
-            _endPoint.Get(new ForeignCurrencyType("EURHUF=X"));
+            await _endPoint.Get(new ForeignCurrencyType("EURHUF=X"))
+                .ConfigureAwait(false);
         }
 
         [Test]
-        public void CanDeserializeShareStock()
+        public async Task CanDeserializeShareStock()
         {
-            _endPoint.Get(new ShareType("OTP"));
+            await _endPoint.Get(new ShareType("OTP"))
+                .ConfigureAwait(false);
         }
     }
 }

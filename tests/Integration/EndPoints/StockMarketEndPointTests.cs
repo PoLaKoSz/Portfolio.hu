@@ -716,14 +716,16 @@ namespace PoLaKoSz.Portfolio.Tests.Integration.EndPoints
         {
             var endPoint = BuildEndPoint(fileName);
 
-            actual = endPoint.Get(new ForeignCurrencyType("dummy-data"));
+            actual = endPoint.Get(new ForeignCurrencyType("dummy-data"))
+                .GetAwaiter().GetResult();
         }
 
         private static void GetDataFrom(string fileName, out Share actual)
         {
             var endPoint = BuildEndPoint(fileName);
 
-            actual = endPoint.Get(new ShareType("dummy-data"));
+            actual = endPoint.Get(new ShareType("dummy-data"))
+                .GetAwaiter().GetResult();
         }
 
         private static IStockMarketEndPoint BuildEndPoint(string fileName)
