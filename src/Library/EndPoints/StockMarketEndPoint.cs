@@ -5,7 +5,7 @@ using PoLaKoSz.Portfolio.Models;
 
 namespace PoLaKoSz.Portfolio.EndPoints
 {
-    public class StockMarketEndPoint : EndPoint
+    internal class StockMarketEndPoint : EndPoint, IStockMarketEndPoint
     {
         private static readonly StockApiDeserializer _parser;
 
@@ -14,12 +14,7 @@ namespace PoLaKoSz.Portfolio.EndPoints
             _parser = new StockApiDeserializer();
         }
 
-        public StockMarketEndPoint()
-            : this(new HttpClient())
-        {
-        }
-
-        public StockMarketEndPoint(HttpClient httpClient)
+        internal StockMarketEndPoint(HttpClient httpClient)
             : base(new Uri("https://data.portfolio.hu/all/json/"), httpClient)
         {
         }

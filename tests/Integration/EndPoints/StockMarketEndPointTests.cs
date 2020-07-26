@@ -726,7 +726,7 @@ namespace PoLaKoSz.Portfolio.Tests.Integration.EndPoints
             actual = endPoint.Get(new ShareType("dummy-data"));
         }
 
-        private static StockMarketEndPoint BuildEndPoint(string fileName)
+        private static IStockMarketEndPoint BuildEndPoint(string fileName)
         {
             var webClient = new FakeWebClient();
 
@@ -735,7 +735,7 @@ namespace PoLaKoSz.Portfolio.Tests.Integration.EndPoints
 
             webClient.SetServerResponse(sourceCode);
 
-            return new StockMarketEndPoint(webClient);
+            return new Portfolio(webClient).StockMarket;
         }
     }
 }

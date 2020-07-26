@@ -6,12 +6,12 @@ namespace PoLaKoSz.Portfolio.Tests.Regression.EndPoints
 {
     class StockMarketEndPointTests
     {
-        private static StockMarketEndPoint _endPoint;
+        private static IStockMarketEndPoint _endPoint;
 
         [OneTimeSetUp]
         public static void OneTimeSetUp()
         {
-            _endPoint = new StockMarketEndPoint();
+            _endPoint = new Portfolio().StockMarket;
         }
 
         [Test]
