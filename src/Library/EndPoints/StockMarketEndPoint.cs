@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 using PoLaKoSz.Portfolio.Deserializers;
 using PoLaKoSz.Portfolio.Models;
@@ -22,22 +23,30 @@ namespace PoLaKoSz.Portfolio.EndPoints
             _httpClient = httpClient;
         }
 
-        public async Task<Share> Get(ShareType stock)
+        public async Task<Share> GetShare(Func<StockMarketRequest<ShareType>, StockMarketRequest<ShareType>> request)
         {
+            var requestBuilder = new StockMarketRequest<ShareType>();
+            var stockType = request.Invoke(requestBuilder);
+
             string json = await _httpClient
-                .GetStringAsync($"{_baseURL}{stock.Name}:interval=1D&resolution=600")
+                .GetStringAsync($"{_baseURL}{requestBuilder.TickerName}:interval={requestBuilder.Interval}")
                 .ConfigureAwait(false);
 
-            return _parser.AsShare(json);
+            return _parser.Parse(requestBuilder, json);
         }
 
-        public async Task<ForeignCurrency> Get(ForeignCurrencyType stock)
+        public async Task<ForeignCurrency> GetForeignCurrency(Func<StockMarketRequest<ForeignCurrencyType>, StockMarketRequest<ForeignCurrencyType>> request)
         {
+            var requestBuilder = new StockMarketRequest<ForeignCurrencyType>();
+            var stockType = request.Invoke(requestBuilder);
+
             string json = await _httpClient
-                .GetStringAsync($"{_baseURL}{stock.Name}:interval=1D&resolution=600")
+                .GetStringAsync($"{_baseURL}{requestBuilder.TickerName}:interval={requestBuilder.Interval}")
                 .ConfigureAwait(false);
 
-            return _parser.AsForex(json);
+            System.IO.File.WriteAllText($"{requestBuilder.TickerName}.json", json);
+
+            return _parser.Parse(requestBuilder, json);
         }
     }
 }

@@ -716,7 +716,7 @@ namespace PoLaKoSz.Portfolio.Tests.Integration.EndPoints
         {
             var endPoint = BuildEndPoint(fileName);
 
-            actual = endPoint.Get(new ForeignCurrencyType("dummy-data"))
+            actual = endPoint.GetForeignCurrency(request => request.LastDay().For(new ForeignCurrencyType("dummy-data")))
                 .GetAwaiter().GetResult();
         }
 
@@ -724,7 +724,7 @@ namespace PoLaKoSz.Portfolio.Tests.Integration.EndPoints
         {
             var endPoint = BuildEndPoint(fileName);
 
-            actual = endPoint.Get(new ShareType("dummy-data"))
+            actual = endPoint.GetShare(request => request.LastDay().For(new ShareType("dummy-data")))
                 .GetAwaiter().GetResult();
         }
 

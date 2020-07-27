@@ -12,7 +12,7 @@ namespace PoLaKoSz.Portfolio.Deserializers
     /// </summary>
     public class StockApiDeserializer : SafeJsonDeserializer
     {
-        public ForeignCurrency AsForex(string json)
+        public ForeignCurrency Parse(StockMarketRequest<ForeignCurrencyType> type, string json)
         {
             try
             {
@@ -35,7 +35,7 @@ namespace PoLaKoSz.Portfolio.Deserializers
             }
         }
 
-        public Share AsShare(string json)
+        public Share Parse(StockMarketRequest<ShareType> type, string json)
         {
             try
             {
@@ -374,7 +374,7 @@ namespace PoLaKoSz.Portfolio.Deserializers
         {
             var list = new List<StockPrice>();
 
-            var container = jObject.SelectToken(propertyName);
+            JToken container = jObject.SelectToken(propertyName);
 
             foreach (JObject node in container.Children())
             {

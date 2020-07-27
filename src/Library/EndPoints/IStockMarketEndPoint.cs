@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using PoLaKoSz.Portfolio.Models;
 
@@ -5,8 +6,8 @@ namespace PoLaKoSz.Portfolio.EndPoints
 {
     public interface IStockMarketEndPoint
     {
-        Task<Share> Get(ShareType stock);
+        Task<Share> GetShare(Func<StockMarketRequest<ShareType>, StockMarketRequest<ShareType>> request);
 
-        Task<ForeignCurrency> Get(ForeignCurrencyType stock);
+        Task<ForeignCurrency> GetForeignCurrency(Func<StockMarketRequest<ForeignCurrencyType>, StockMarketRequest<ForeignCurrencyType>> request);
     }
 }
