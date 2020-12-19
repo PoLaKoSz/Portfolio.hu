@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
-using PoLaKoSz.Portfolio.EndPoints;
 using PoLaKoSz.Portfolio.Exceptions;
 using PoLaKoSz.Portfolio.Models;
 
@@ -13,7 +12,7 @@ namespace PoLaKoSz.Portfolio.Deserializers
     /// </summary>
     internal class StockApiDeserializer : SafeJsonDeserializer
     {
-        public ForeignCurrency Parse(StockRequest<ForeignCurrency> type, string json)
+        public ForeignCurrency ParseAsForeignCurrency(string json)
         {
             try
             {
@@ -36,7 +35,7 @@ namespace PoLaKoSz.Portfolio.Deserializers
             }
         }
 
-        public Share Parse(StockRequest<Share> type, string json)
+        public Share ParseAsShare(string json)
         {
             try
             {
