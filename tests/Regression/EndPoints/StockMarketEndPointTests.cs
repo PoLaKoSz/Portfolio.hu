@@ -32,6 +32,13 @@ namespace PoLaKoSz.Portfolio.Tests.Regression.EndPoints
         }
 
         [Test]
+        public async Task CanDeserializeLastMonthIntervalForexStock()
+        {
+            await _endPoint.Get(new ForeignCurrencyType("EURHUF=X").LastMonth()
+                .ConfigureAwait(false);
+        }
+
+        [Test]
         public async Task CanDeserializeLastThreeMonthIntervalForexStock()
         {
             await _endPoint.GetForeignCurrency(request => request.LastThreeMonth().For(new ForeignCurrencyType("EURHUF=X")))

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
+using PoLaKoSz.Portfolio.EndPoints;
 using PoLaKoSz.Portfolio.Exceptions;
 using PoLaKoSz.Portfolio.Models;
 
@@ -10,9 +11,9 @@ namespace PoLaKoSz.Portfolio.Deserializers
     /// Fastest deserialization method which checks if
     /// a JSON string contains unparsed property.
     /// </summary>
-    public class StockApiDeserializer : SafeJsonDeserializer
+    internal class StockApiDeserializer : SafeJsonDeserializer
     {
-        public ForeignCurrency Parse(StockMarketRequest<ForeignCurrencyType> type, string json)
+        public ForeignCurrency Parse(StockRequest<ForeignCurrency> type, string json)
         {
             try
             {
@@ -35,7 +36,7 @@ namespace PoLaKoSz.Portfolio.Deserializers
             }
         }
 
-        public Share Parse(StockMarketRequest<ShareType> type, string json)
+        public Share Parse(StockRequest<Share> type, string json)
         {
             try
             {
