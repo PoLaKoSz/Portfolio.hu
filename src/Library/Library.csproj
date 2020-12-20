@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Portfolio.hu.API</PackageId>
     <Authors>Tom PoLáKoSz</Authors>
-    <Version>0.1.0</Version>
+    <Version>1.0.0</Version>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageTags>wrapper api net standard 2.0 portfolio.hu</PackageTags>
     <PackageProjectUrl>https://github.com/PoLaKoSz/Portfolio.hu-API</PackageProjectUrl>
