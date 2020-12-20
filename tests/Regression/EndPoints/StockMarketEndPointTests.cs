@@ -18,6 +18,18 @@ namespace PoLaKoSz.Portfolio.Tests.Regression.EndPoints
         }
 
         [Test]
+        public async Task ForeignCurrencyTypeLastDay()
+        {
+            await _endPoint.Get(new ForeignCurrencyType("EURHUF=X")).LastDay();
+        }
+
+        [Test]
+        public async Task ShareTypeLastDay()
+        {
+            await _endPoint.Get(new ShareType("OTP")).LastDay();
+        }
+
+        [Test]
         public async Task CanDeserializeLastDayIntervalForexStock()
         {
             await _endPoint.GetForeignCurrency(request => request.LastDay().For(new ForeignCurrencyType("EURHUF=X")))
