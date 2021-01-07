@@ -46,8 +46,6 @@ namespace PoLaKoSz.hu.Portfolio_hu_API
 
             string response = WebClient.DownloadString(uriBuilder.Uri);
 
-            System.IO.File.WriteAllText($"{DateTime.Now.ToString("HH_mm_ss")}.html", response);
-
             return response;
         }
 
