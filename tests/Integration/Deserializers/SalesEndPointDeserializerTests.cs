@@ -70,5 +70,67 @@ namespace tests.Integration.Deserializers
             Assert.That(third.Count, Is.EqualTo(147_760), "Count");
             Assert.That(third.Value, Is.EqualTo(2_037_610_400), "Value");
         }
+
+        [Test]
+        public void ParseTickerSelectorReturnCorrectItems()
+        {
+            IEnumerable<ShareType> expected = new List<ShareType>()
+            {
+                new ShareType("4IG"),
+                new ShareType("AKKO"),
+                new ShareType("AKKO"),
+                new ShareType("ALTEO"),
+                new ShareType("ANY"),
+                new ShareType("APPENINN"),
+                new ShareType("AUTOWALLIS"),
+                new ShareType("BIF"),
+                new ShareType("CIG"),
+                new ShareType("CIGPANNONIA"),
+                new ShareType("CYBERG"),
+                new ShareType("DELTA"),
+                new ShareType("DMKER"),
+                new ShareType("DUNAHOUSE"),
+                new ShareType("EHEP"),
+                new ShareType("ENEFI"),
+                new ShareType("FINEXT"),
+                new ShareType("FINEXT B"),
+                new ShareType("FORRAS|OE"),
+                new ShareType("FORRAS|T"),
+                new ShareType("FUTURAQUA"),
+                new ShareType("GLOSTER"),
+                new ShareType("GOPD"),
+                new ShareType("GSPARK"),
+                new ShareType("KARPOT"),
+                new ShareType("KPACK"),
+                new ShareType("KULCSSOFT"),
+                new ShareType("MASTERPLAST"),
+                new ShareType("MEGAKRAN"),
+                new ShareType("MKBBANK"),
+                new ShareType("MOL"),
+                new ShareType("MTELEKOM"),
+                new ShareType("NORDTELEKOM"),
+                new ShareType("NUTEX"),
+                new ShareType("OPUS"),
+                new ShareType("ORM"),
+                new ShareType("ORMESTER"),
+                new ShareType("OTP"),
+                new ShareType("OTT1"),
+                new ShareType("PANNERGY"),
+                new ShareType("PENSUM"),
+                new ShareType("RABA"),
+                new ShareType("RICHTER"),
+                new ShareType("SET"),
+                new ShareType("SUNDELL"),
+                new ShareType("TAKAREKJZB"),
+                new ShareType("UBM"),
+                new ShareType("WABERERS"),
+                new ShareType("ZWACK"),
+            };
+            string html = GetTestData("active-stock");
+
+            IEnumerable<ShareType> tickers = _serializer.ParseTickerSelector(html);
+
+            Assert.That(tickers, Is.EqualTo(expected));
+        }
     }
 }

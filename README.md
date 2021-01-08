@@ -25,4 +25,6 @@ Share ticker = stockMarket.Get(new ShareType("OTP"));
 
 var salesDetails = new SalesEndPoint(client);
 IReadOnlyList<Sale> sales = salesDetails.For(new ShareType("OTP"));
+
+IReadOnlyList<ShareType> availableStocks = salesDetails.GetAvailableOptions();
 ```

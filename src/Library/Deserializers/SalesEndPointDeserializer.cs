@@ -44,5 +44,39 @@ namespace PoLaKoSz.hu.Portfolio_hu_API.Deserializers
             }
             return results;
         }
+
+        /// <exception cref="ArgumentException" />
+        /// <exception cref="NodeNotFoundException" />
+        public IReadOnlyList<ShareType> ParseTickerSelector(string html)
+        {
+            HtmlDocument htmlDocument = new HtmlDocument();
+            htmlDocument.LoadHtml(html);
+
+            HtmlNode rootNode = htmlDocument.GetElementbyId("ticker-selector");
+            if (rootNode == null)
+            {
+                throw new NodeNotFoundException("Couldn't find select tag containing the ticker list.");
+            }
+
+            HtmlNodeCollection options = rootNode.SelectNodes("./option");
+            List<ShareType> tickers = new List<ShareType>();
+            if (options == null)
+            {
+                return tickers;
+            }
+
+            foreach (HtmlNode option in options)
+            {
+                string tickerName = option.GetAttributeValue("value", null);
+                if (string.IsNullOrEmpty(tickerName))
+                {
+                    throw new ArgumentException("Option HTML tag doesn't have value attribute!");
+                }
+
+                tickers.Add(new ShareType(tickerName));
+            }
+
+            return tickers;
+        }
     }
 }
