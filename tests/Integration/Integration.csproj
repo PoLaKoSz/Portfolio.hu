@@ -23,6 +23,12 @@
     <None Update="StaticResources\articles\valid.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="StaticResources\Sales\active-stock.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="StaticResources\Sales\inactive-stock.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="StaticResources\Stocks\EurHuf.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
